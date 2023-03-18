@@ -1,0 +1,149 @@
+@import '../../App.variables.scss';
+
+.auth-form__wrap {
+    padding: 48px 56px;
+
+    @media (max-width: 360px) {
+        padding: 24px 16px;
+    }
+}
+
+.auth-form {
+    width: 100%;
+
+    .form__title {
+        @include h4;
+        margin-bottom: 8px;
+    }
+
+    .form__inputs-box {
+        width: min-content;
+        margin-top: 32px;
+
+
+    }
+
+    .form__lable {
+        position: relative;
+
+    }
+
+    .form__input {
+        width: 100%;
+        background: #F9F9FA;
+        border-radius: 4px;
+        padding: 20px 12px;
+        outline: 0;
+        border: 0;
+        border-bottom: 1px solid #BFC4C9;
+        margin-bottom: 30px;
+
+        &::placeholder {
+            @include body-small;
+            color: $text-color;
+        }
+    }
+
+    .form-btn {
+        width: 415px;
+        background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+        border-radius: 30px;
+        @include button-large;
+        text-align: center;
+        color: $white-color;
+        padding: 14px 0;
+        margin-top: 32px;
+
+        @media (max-width: 360px) {
+            width: 255px;
+        }
+    }
+
+    .form__warn {
+        @include info-large;
+        color: $negative-color;
+        margin-right: 12px;
+    }
+
+    .forgot-pass {
+        @include info-large;
+        margin-right: 12px;
+        color: $dark40-color;
+
+        &-active {
+            color: $text-color;
+            @include info-large;
+            margin-right: 12px;
+        }
+    }
+
+    .form__highlight-error {
+        border-bottom: 1px solid $negative-color;
+    }
+
+    .highlight-error {
+        visibility: visible;
+        color: $negative-color;
+    }
+
+    .password-eye {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        background-size: 24px;
+        display: block;
+        width: 10px;
+        height: 7px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .eye-open {
+        background-image: url(../../assets/svg/EyeOpened.svg);
+    }
+
+    .eye-close {
+        background-image: url(../../assets/svg/EyeClosed.svg);
+    }
+}
+
+.auth-error__box {
+    position: absolute;
+    top: 0;
+    z-index: 10;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    background: $white-color;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 16px;
+    padding: 48px 56px;
+
+
+    .auth-error__title {
+        @include h4;
+    }
+
+    .auth-error__message {
+        @include body-large;
+        text-align: center;
+    }
+
+    .auth-error__button {
+        width: 410px;
+        text-align: center;
+        @include button-large;
+        color: $white-color;
+        background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+        border-radius: 30px;
+        padding: 14px 0px;
+
+        @media (max-width: 360px) {
+            width: 255px;
+        }
+    }
+}

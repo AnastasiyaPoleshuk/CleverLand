@@ -1,0 +1,135 @@
+$descr-font: 14px;
+$text-font: 18px;
+$subtitle-font: 24px;
+$title-font: 44px;
+$big-font: 52px;
+$font-family: 'Montserrat';
+
+$text-color: #363636;
+$accept-color: #FF5253;
+$white-color: #FFFFFF;
+$dark30-color: #C3C3C3;
+$dark40-color: #A7A7A7;
+$button-color: #F95307;
+$button-color-hover: #F86E0C;
+$warning-color: #FFBC1F;
+$positive-color: #00CA71;
+$search-color: rgb(248, 54, 0);
+$negative-color: #F42C4F;
+$negative-bg-color: #FEEBEA;
+$positive-bg-color: #EBF9F1;
+
+$main-width: 1110px;
+
+@mixin font {
+    font-family: $font-family;
+    font-size: $text-font;
+    font-weight: normal;
+    font-style: normal;
+    letter-spacing: 1px;
+    color: $text-color;
+}
+
+@mixin h1 {
+    font-weight: 500;
+    font-size: $big-font;
+    line-height: 64px;
+    letter-spacing: 0.2px;
+}
+
+@mixin h2 {
+    font-weight: 600;
+    font-size: 44px;
+    line-height: 54px;
+}
+
+@mixin h3 {
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: 0.1px;
+}
+
+@mixin h4 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 30px;
+    letter-spacing: 0.1px;
+}
+
+@mixin h5 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: 0.1px;
+}
+
+@mixin body-large {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+
+@mixin body-small {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+}
+
+@mixin subtitle-large {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+
+@mixin subtitle-small {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.1px;
+}
+
+@mixin button-large {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+}
+
+@mixin button-small {
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 0.2px;
+    text-transform: uppercase;
+    border-radius: 30px;
+    outline: 0;
+    border: none;
+    cursor: pointer;
+}
+
+@mixin info-large {
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+}
+
+@mixin info-small {
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+}

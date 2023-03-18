@@ -1,0 +1,60 @@
+@import '../../App.variables.scss';
+
+
+.footer {
+
+    .footer__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 0;
+        border-top: 1px solid #BFC4C9;
+
+        @media (max-width: 360px) {
+            flex-direction: column;
+        }
+    }
+
+    .footer__creditionals {
+        @include body-large;
+
+        @media (max-width: 360px) {
+            width: 68%;
+        }
+    }
+
+    .footer__social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 24px;
+
+        @media (max-width: 360px) {
+            margin-top: 16px;
+        }
+    }
+
+    .social-media__item {
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-size: 24px;
+        background-repeat: no-repeat;
+    }
+
+    .facebook {
+        background-image: url(../../assets/svg/Facebook.svg);
+    }
+
+    .instagram {
+        background-image: url(../../assets/svg/Instagram.svg);
+    }
+
+    .vk {
+        background-image: url(../../assets/svg/Vk.svg);
+    }
+
+    .linkedin {
+        background-image: url(../../assets/svg/Linkedin.svg);
+    }
+}

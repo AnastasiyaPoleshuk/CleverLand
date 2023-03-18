@@ -1,0 +1,69 @@
+@import '../../App.variables.scss';
+
+.alert-modal__container {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 28px 32px;
+    position: absolute !important;
+    top: 64px;
+    z-index: 40;
+    border-radius: 5px;
+    transition: top .1s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    .alert__text {
+        @include subtitle-large;
+        margin: 0px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &-error::before {
+            content: url('../../assets/svg/error__close.svg');
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            margin: 0px 24px 0px 0;
+        }
+
+        &-success::before {
+            content: url('../../assets/svg/CheckCircle.svg');
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            margin: 0px 24px 0px 0;
+        }
+    }
+
+    .alert__btn-close {
+        display: inline-block;
+        width: 14px;
+        height: 2px;
+        border-radius: .5px;
+        background: $text-color;
+        transform: rotate(45deg);
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 2px;
+            position: absolute;
+            border-radius: .5px;
+            background: $text-color;
+            transform: rotate(90deg);
+        }
+    }
+}
+
+.error__box {
+    background: $negative-bg-color;
+    border: 1.5px solid $negative-color;
+}
+
+.success__box {
+    background: $positive-bg-color;
+    border: 1.5px solid $positive-color;
+}

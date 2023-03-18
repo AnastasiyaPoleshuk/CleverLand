@@ -1,0 +1,38 @@
+@import '../../App.variables.scss';
+
+.content-wrap {
+    flex: 1 1 80%;
+    margin-bottom: 62px;
+
+    .contract__title {
+        @include h3;
+
+        @media (max-width: 360px) {
+            @include h5;
+        }
+    }
+
+    .contract__list {
+        padding: 0;
+    }
+
+    ol {
+        list-style: none;
+        counter-reset: li;
+    }
+
+    .contract__list-item {
+        @include subtitle-large;
+        margin-top: 32px;
+    }
+
+    li {
+        @include body-large;
+        margin-top: 16px;
+    }
+
+    li:before {
+        counter-increment: li;
+        content: counters(li, ".") ". ";
+    }
+}

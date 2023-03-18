@@ -1,0 +1,142 @@
+@import '../../App.variables.scss';
+
+.header {
+    margin: 32px 0 62px 0;
+
+    @media (max-width: 360px) {
+        margin: 24px 0 32px 0;
+    }
+
+    .header__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+    }
+
+    .header__link {
+        flex: 1 1 27%;
+        display: block;
+        width: 165px;
+        height: 40px;
+        background-image: url(../../assets/logo.png);
+        background-size: 165px, 40px;
+        background-repeat: no-repeat;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .header__burger {
+        display: none;
+
+        &,
+        &::before,
+        &::after,
+        &-active,
+        &-active::before,
+        &-active::after {
+            width: 32px;
+            height: 2px;
+            background-color: $text-color;
+            border: none;
+            border-radius: 5px;
+            margin-right: 24px;
+            cursor: pointer;
+            transition: transform .5s;
+
+            @media (max-width: 360px) {
+                width: 24px;
+            }
+        }
+
+        &::after {
+            content: ' ';
+            position: absolute;
+            left: 0px;
+            bottom: 11px;
+
+            @media (max-width: 360px) {
+                bottom: 6px;
+            }
+        }
+
+        &::before {
+            content: ' ';
+            position: absolute;
+            left: 0px;
+            top: 11px;
+
+            @media (max-width: 360px) {
+                top: 6px;
+            }
+        }
+
+        &-active::after {
+            content: ' ';
+            position: absolute;
+            left: 0px;
+            bottom: 0px;
+            transform: rotate(90deg);
+        }
+
+        &-active::before {
+            height: 0;
+        }
+
+        &-active {
+            transform: rotate(-45deg);
+
+            @media (max-width: 360px) {
+                top: 13px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            display: inline-block;
+
+        }
+
+
+    }
+
+    .header__title {
+        flex: 1 1 65%;
+        @include h3;
+        text-align: left;
+
+        @media (max-width: 360px) {
+            @include h5;
+        }
+
+    }
+
+    .header__profile-block {
+        flex: 1 1 20%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+    }
+
+    .profile__greetings {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+        @include subtitle-small;
+    }
+
+    .profile__link {
+        display: block;
+        width: 58px;
+        height: 58px;
+        background-image: url(../../assets/photo-avatar.png);
+        background-size: 58px;
+        border: none;
+    }
+
+}

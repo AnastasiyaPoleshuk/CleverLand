@@ -1,0 +1,41 @@
+@import '../../App.variables.scss';
+
+.header-nav {
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 32px 24px;
+    gap: 32px;
+    background: $white-color;
+    box-shadow: 4px 4px 4px rgba(54, 54, 54, 0.05), -4px 4px 4px rgba(54, 54, 54, 0.05);
+    border-radius: 0px 0px 10px 10px;
+
+    .header-nav__profile,
+    .header-nav__exit-btn {
+        @include h5;
+    }
+
+    .header-nav__exit-btn {
+        border: none;
+        background: none;
+        outline: 0;
+    }
+}
+
+.modal-nav__block {
+    align-self: flex-start;
+    box-shadow: none;
+    width: fit-content;
+    background: #F9F9FA;
+    padding: 0;
+    margin-left: 32px;
+}
+
+.header-nav__block {
+    position: absolute;
+    top: 72px;
+    right: 0;
+    z-index: 5;
+}

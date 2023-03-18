@@ -1,0 +1,56 @@
+@import '../../App.variables.scss';
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    background: rgba(54, 54, 54, 0.3);
+    backdrop-filter: blur(10px);
+
+    .modal-window {
+        background: $white-color;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 16;
+        padding: 48px 32px;
+        border-radius: 16px;
+
+        @media (max-width: 360px) {
+            padding: 16px;
+        }
+    }
+
+    .modal-window__close-btn {
+        background: #F9F9FA;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 18;
+        top: 32px;
+        right: 32px;
+        border: none;
+
+        &::after {
+            content: url(../../assets/svg/cross.svg);
+            display: block;
+            position: absolute;
+            z-index: 20;
+            left: 51%;
+            top: 56%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (max-width: 360px) {
+            width: 32px;
+            height: 32px;
+            top: 16px;
+            right: 16px;
+        }
+    }
+}

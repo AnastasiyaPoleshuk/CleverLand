@@ -1,0 +1,109 @@
+@import '../../App.variables.scss';
+
+.feedbacks__details {
+
+    & .feedbacks__title::-webkit-details-marker {
+        display: none
+    }
+
+    &>.feedbacks__title {
+        list-style: none;
+    }
+
+    & .feedbacks__title::after {
+        content: url(../../assets/svg/close-feedbacks.svg);
+        display: inline-block;
+        margin: 0px 0 0 24px;
+        height: 24px;
+        position: absolute;
+        top: 2px;
+    }
+
+    &[open] .feedbacks__title::after {
+        content: url(../../assets/svg/open-feedbacks.svg);
+        display: inline-block;
+    }
+
+    .feedbacks__title {
+        @include h5;
+        cursor: pointer;
+
+        &::before {
+            content: '';
+            width: 350px;
+            height: 1px;
+            background: #EBEBEB;
+            position: absolute;
+            top: 44px;
+            left: 0;
+        }
+
+        @media (max-width: 360px) {
+            margin: 0 0 30px 0;
+        }
+
+        .feedbacks__count {
+            @include body-small;
+            color: $dark40-color;
+            margin-left: 6px;
+        }
+
+
+    }
+
+    .feedbacks__wrap {
+        width: 65%;
+        margin-top: 16px;
+
+        @media (max-width: 360px) {
+            width: 100%;
+        }
+    }
+
+    .feedback {
+        width: 100%;
+        margin-top: 16px;
+
+        @media (max-width: 360px) {
+            margin-top: 32px;
+        }
+
+        &:first-child {
+            margin-top: 32px;
+        }
+    }
+
+    .feedback__header {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 24px;
+        margin-bottom: 16px;
+    }
+
+    .feedback__header-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        @media (max-width: 360px) {
+            flex-direction: column;
+            justify-content: center;
+        }
+    }
+
+    .feedback__user-img {
+        width: 32px;
+    }
+
+    .feedback__user-name,
+    .feedback__date {
+        @include body-large;
+        color: #727272;
+    }
+
+    .feedback__text {
+        @include body-large;
+        margin-top: 16px;
+    }
+}

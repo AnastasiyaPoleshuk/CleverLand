@@ -1,0 +1,56 @@
+@import '../../App.variables.scss';
+
+.booking__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+
+    @media (max-width: 360px) {
+        gap: 24px;
+    }
+
+    @media (max-width: 360px) {
+        gap: 24px;
+    }
+
+    .booking__title {
+        @include h4;
+        text-align: center;
+        width: 60%;
+
+        @media (max-width: 360px) {
+            width: 100%;
+            @include h5;
+        }
+    }
+
+    .booking__btn {
+        width: 416px;
+        @include button-large;
+        background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+        color: $white-color;
+        text-align: center;
+        padding: 14px 0;
+
+        @media (max-width: 400px) {
+            width: 290px;
+        }
+
+        @media (max-width: 360px) {
+            width: 256px;
+            padding: 14px 0;
+            @include button-small;
+        }
+    }
+
+    .remove-booking {
+        background: $white-color;
+        color: $text-color;
+        border: 1px solid $dark40-color;
+    }
+
+    .disabled {
+        background: #EBEBEB;
+    }
+}

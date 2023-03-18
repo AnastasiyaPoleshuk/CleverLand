@@ -1,0 +1,115 @@
+@import '../../App.variables.scss';
+
+.comments__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 32px;
+    position: relative;
+
+    @media (max-width: 360px) {
+        gap: 24px;
+    }
+
+    .comments__title {
+        @include h4;
+
+        @media (max-width: 360px) {
+            @include h5;
+        }
+    }
+
+    .rating__box {}
+
+    .rating__title {
+        @include subtitle-large;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .stars,
+    .stars-active {
+        display: inline-block;
+        width: 35px;
+        height: 35px;
+        margin-right: 20px;
+        background-repeat: no-repeat;
+        background-size: 34px;
+
+        @media (max-width: 360px) {
+            margin-right: 18px;
+        }
+    }
+
+    .stars {
+        background-image: url(../../assets/svg/star.svg);
+
+
+        &-active {
+            background-image: url(../../assets/svg/star-active.svg);
+        }
+    }
+
+    .comments__textarea {
+        width: 100%;
+        background: #F9F9FA;
+        border-radius: 4px;
+        width: 416px;
+        height: 132px;
+        border: none;
+        padding: 12px;
+
+        &::placeholder {
+            @include body-small;
+            color: $dark40-color;
+
+            @media (max-width: 360px) {
+                @include body-large;
+            }
+        }
+
+        @media (max-width: 360px) {
+            width: 256px;
+        }
+    }
+
+    .comments__btn {
+        background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+        @include button-large;
+        color: $white-color;
+        padding: 14px 165px;
+
+        @media (max-width: 360px) {
+            padding: 11px 95px;
+        }
+    }
+
+    .modal-window__close-btn {
+        background: #F9F9FA;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 18;
+        top: 0px;
+        right: 0px;
+        border: none;
+
+        &::after {
+            content: url(../../assets/svg/cross.svg);
+            display: block;
+            position: absolute;
+            z-index: 20;
+            left: 51%;
+            top: 56%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (max-width: 360px) {
+            width: 32px;
+            height: 32px;
+            top: 16px;
+            right: 16px;
+        }
+    }
+}

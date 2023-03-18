@@ -1,0 +1,21 @@
+@import '../../App.variables.scss';
+
+.cards-wraper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin: 32px 0 62px 0;
+    position: relative;
+
+    .alternate-text {
+        @include h3;
+        color: $dark40-color;
+        width: max-content;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
