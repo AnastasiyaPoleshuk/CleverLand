@@ -23,7 +23,7 @@ export const booking = async (request: IBookingRequestData) => {
                     data: error.response?.data || null,
                     error: {
                         status: error.response?.status || 502,
-                        name: error.response?.data.name || '',
+                        name: error.response?.data?.name || '',
                         message: error.message,
                         details: {}
                     }

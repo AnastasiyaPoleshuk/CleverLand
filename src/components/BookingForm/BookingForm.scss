@@ -5,9 +5,10 @@
     flex-direction: column;
     align-items: center;
     gap: 32px;
+    position: relative;
 
-    @media (max-width: 360px) {
-        gap: 24px;
+    @media (max-width: 400px) {
+        gap: 18px;
     }
 
     @media (max-width: 360px) {
@@ -19,8 +20,8 @@
         text-align: center;
         width: 60%;
 
-        @media (max-width: 360px) {
-            width: 100%;
+        @media (max-width: 400px) {
+            // width: 100%;
             @include h5;
         }
     }
@@ -52,5 +53,35 @@
 
     .disabled {
         background: #EBEBEB;
+    }
+
+    .modal-window__close-btn {
+        background: #F9F9FA;
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        position: absolute;
+        z-index: 250;
+        top: 0;
+        right: 0;
+        border: none;
+        overflow: visible;
+
+        &::after {
+            content: url(../../assets/svg/cross.svg);
+            display: block;
+            position: absolute;
+            z-index: 20;
+            left: 51%;
+            top: 56%;
+            transform: translate(-50%, -50%);
+        }
+
+        @media (max-width: 400px) {
+            width: 32px;
+            height: 32px;
+            top: 0;
+            right: 0;
+        }
     }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable no-plusplus */
 import { useEffect, useState,  } from 'react';
 import moment, { Moment } from 'moment';
 
@@ -78,7 +79,7 @@ export const Calendar = (props: IProps) => {
         let done = false;
 
         const date = month.clone().startOf('month').day('Monday');
-        const count = 0;
+        let count = 0;
         let monthIndex = month.month();
 
         while (!done) {
@@ -92,7 +93,7 @@ export const Calendar = (props: IProps) => {
             );
 
             date.add(1, 'w');
-            done = (count + 1) > 2 && monthIndex !== date.month();
+            done = count++ > 2 && monthIndex !== date.month();
             monthIndex = date.month();
         }
 

@@ -16,7 +16,7 @@ export const ModalWindow = ({ children, type }: IProps) => {
         <section className="overlay" onClick={() => closeModal(type)} data-test-id='modal-outer'>
             <div className="modal-window" onClick={(e) => e.stopPropagation()} data-test-id='booking-modal'>
                 {children}
-                <button type='button' className="modal-window__close-btn" onClick={() => closeModal(type)} data-test-id='modal-close-button'>&nbsp;</button>
+                {/* <button type='button' className="modal-window__close-btn" onClick={() => closeModal(type)} data-test-id='modal-close-button'>&nbsp;</button> */}
             </div>
         </section>
     );

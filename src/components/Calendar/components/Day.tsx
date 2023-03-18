@@ -40,6 +40,31 @@ export const Day = (props: IDayProps) => {
         return '';
     }
 
+    const isWeekend = () => {
+
+        if (
+            day.name === 'Mo' &&
+            day.date.day() !== 6 &&
+            day.date.dayOfYear() === moment().dayOfYear() + 2
+        ) {
+            day.isMonday = true;
+
+            return true;
+        } 
+
+        if (
+            day.name === 'Mo' &&
+            day.date.day() !== 0 &&
+            day.date.dayOfYear() === moment().dayOfYear() + 1
+        ) {
+            day.isMonday = true;
+
+            return true;
+        } 
+
+        return false;
+    }
+
     const isFriday = () => {
 
         if (
@@ -56,15 +81,20 @@ export const Day = (props: IDayProps) => {
     }
 
     const checkClick = () => {
-        isClick ? null : setIsClick(true);
-        select(day)
+        
+        if(day.date.day() !== 6 &&
+        day.date.day() !== 0) {
+            isClick ? null : setIsClick(true);
+            select(day)
+        }
+        
     }
 
     return (
         <span
             key={day.date.toString()}
             data-test-id='day-button'
-            className={`day ${weekday} ${isFriday() ? 'active' : getActiveDays()} ${day.isToday ? 'today ' : ''} ${day.date.isSame(selected) && isClick ? 'selected' : ''}`}
+            className={`day ${weekday} ${isWeekend() && 'active'} ${isFriday() ? 'active' : getActiveDays()} ${day.isToday ? 'today' : ''} ${day.date.isSame(selected) && isClick ? 'selected' : ''}`}
             onClick={() => checkClick()}
         >
             {day.number}

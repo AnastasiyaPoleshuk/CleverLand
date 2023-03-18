@@ -45,6 +45,7 @@ export const BookingForm = (props: IProps) => {
     return (
         <div className="booking__box">
             <h3 className="booking__title" data-test-id='modal-title'>Выбор даты бронирования</h3>
+            <button type='button' className="modal-window__close-btn" onClick={() => closeModal(CONSTANTS.BOOKING_MODAL)} data-test-id='modal-close-button' />
             <Calendar
                 setSelected={setSelected}
                 selected={selected}
