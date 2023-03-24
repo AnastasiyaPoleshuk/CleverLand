@@ -1,0 +1,8 @@
+.menu-wrapp {
+    flex: 1 1 25%;
+    margin-right: 24px;
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+}

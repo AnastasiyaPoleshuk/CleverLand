@@ -1,0 +1,73 @@
+@import '../../../../App.variables.scss';
+
+.profile-header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    align-self: flex-start;
+    gap: 30px;
+
+
+    .profile-header__avatar-box {
+        width: fit-content;
+        height: fit-content;
+
+        border-radius: 150px;
+        overflow: hidden;
+        box-sizing: border-box;
+        position: relative;
+    }
+
+    .profile-header__avatar-img {
+        width: 170px;
+        height: 118px;
+        background: $white-color;
+        box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18), 0px 1px 5px rgba(191, 196, 201, 0.24);
+    }
+
+    .add-photo {
+        position: absolute;
+        width: 120px;
+        height: 42px;
+        left: 0px;
+        top: 75px;
+        background: $text-color;
+        opacity: .6;
+        cursor: pointer;
+
+        &::after {
+            content: url(../../../../assets/svg/add-avatar.svg);
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+        }
+    }
+
+    .profile-header__fullname-box {
+        width: 100%;
+    }
+
+    .profile-header__firstName,
+    .profile-header__lastName {
+        @include h1;
+        text-align: left;
+
+        @media (max-width: 320px) {
+            @include h2;
+        }
+    }
+
+    .hidden {
+        visibility: hidden;
+        opacity: 0;
+        margin: 0;
+        padding: 0;
+        width: 0;
+        border: 0;
+    }
+}

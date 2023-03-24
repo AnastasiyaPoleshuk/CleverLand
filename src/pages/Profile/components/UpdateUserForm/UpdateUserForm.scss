@@ -1,0 +1,103 @@
+@import '../../../../App.variables.scss';
+
+.update-user__form {
+    .form__title {
+        @include h4;
+    }
+
+    .form__subtitle {
+        @include body-large;
+        color: $dark40-color;
+        margin-top: 8px;
+    }
+
+    .form__section-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+        margin: 32px 0 52px 0;
+    }
+
+    .form__update-btn,
+    .form__submit-btn {
+        width: 255px;
+        border-radius: 30px;
+        padding: 14px 0;
+        @include button-large;
+        text-align: center;
+    }
+
+    .form__label {
+        position: relative;
+    }
+
+    .form__input {
+        width: 100%;
+        background: #F9F9FA;
+        border-radius: 4px;
+        padding: 20px 12px;
+        outline: 0;
+        border: 0;
+        border-bottom: 1px solid #BFC4C9;
+        margin-bottom: 30px;
+
+        &::placeholder {
+            @include body-small;
+            color: $text-color;
+        }
+    }
+
+    .form__input-info {
+        @include info-large;
+        color: $dark40-color;
+        margin: 2px 12px 18px 12px;
+    }
+
+    .form__highlight-error {
+        border-bottom: 1px solid $negative-color;
+    }
+
+    .highlight-error {
+        visibility: visible;
+        color: $negative-color;
+    }
+
+    .password-eye {
+        position: absolute;
+        top: 0;
+        right: 15px;
+        background-size: 24px;
+        display: block;
+        width: 10px;
+        height: 7px;
+        width: 24px;
+        height: 24px;
+    }
+
+    .eye-open {
+        background-image: url(../../../../assets/svg/EyeOpened.svg);
+    }
+
+    .eye-close {
+        background-image: url(../../../../assets/svg/EyeClosed.svg);
+    }
+
+    .form__submit-btn {
+        background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+        border: 1px solid $white-color;
+        color: $white-color;
+
+        &:disabled {
+            background: #EBEBEB;
+        }
+    }
+
+    .form__update-btn {
+        background: $white-color;
+        border: 1px solid #BFC4C9;
+        color: $text-color;
+        margin-right: 30px;
+    }
+
+}

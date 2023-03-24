@@ -1,0 +1,210 @@
+@import '../../App.variables.scss';
+
+.nav__wrap {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .nav__filter-wrap {
+        position: relative;
+    }
+
+    .nav__filter,
+    .nav__filter-search {
+        background: $white-color;
+        box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18), 0px 1px 5px rgba(191, 196, 201, 0.24);
+        border: none;
+        outline: none;
+        border-radius: 20px;
+        padding: 10px 16px;
+
+        @media (max-width: 360px) {
+            width: 32px;
+            padding: 8px;
+        }
+    }
+
+    .nav__filter-search {
+        width: 350px;
+        margin-right: 16px;
+        padding: 10px 16px 10px 40px;
+        transition: all .5s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        &::placeholder {
+            @include body-small;
+        }
+
+        @media (max-width: 360px) {
+            visibility: hidden;
+            width: 32px;
+            height: 32px;
+            padding: 0;
+
+            &::placeholder {
+                font-size: 0px;
+            }
+        }
+
+        &:focus {
+            color: $search-color;
+        }
+
+        &:focus~.cross {
+            content: url(../../assets/svg/cross.svg);
+            display: inline-block;
+            position: absolute;
+            z-index: 9;
+            top: 13px;
+            right: 182px;
+        }
+
+        &:focus~.search {
+            content: url(../../assets/svg/search_active.svg);
+            display: inline-block;
+            position: absolute;
+            top: 13px;
+            left: 16px;
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    .cross {
+        content: url(../../assets/svg/cross.svg);
+        width: 22px;
+        height: 22px;
+        visibility: hidden;
+    }
+
+    .search {
+        content: url(../../assets/svg/Search.svg);
+        display: inline-block;
+        position: absolute;
+        top: 13px;
+        left: 16px;
+        width: 16px;
+        height: 16px;
+
+        @media (max-width: 360px) {
+            width: 32px;
+            height: 32px;
+            padding: 8px;
+            top: 1px;
+            left: 0px;
+            background: $white-color;
+            box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18), 0px 1px 5px rgba(191, 196, 201, 0.24);
+            border: none;
+            outline: none;
+            border-radius: 20px;
+        }
+    }
+
+    .nav__filter {
+        @include body-small;
+        color: $dark40-color;
+        border: 1px solid $white-color;
+        cursor: pointer;
+        transition: .3s;
+
+        &:hover {
+            color: $text-color;
+            border: 1px solid $text-color;
+        }
+
+
+
+        @media (max-width: 360px) {
+            font-size: 0;
+            width: 32px;
+            height: 32px;
+        }
+
+    }
+
+    .descending::before {
+        content: url(../../assets/svg/sort.svg);
+        margin-right: 8px;
+
+        @media (max-width: 360px) {
+            margin: 0;
+        }
+    }
+
+    .ascending::before {
+        content: url(../../assets/svg/icon-sort-descending.svg);
+        margin-right: 8px;
+
+        @media (max-width: 360px) {
+            margin: 0;
+        }
+    }
+
+    .view-controls__control {
+        background: $white-color;
+        border: none;
+        border-radius: 50%;
+        padding: 9px 9px 5px 9px;
+        cursor: pointer;
+        filter: drop-shadow(0px 2px 4px rgba(191, 196, 201, 0.2)) drop-shadow(0px 3px 4px rgba(191, 196, 201, 0.18)) drop-shadow(0px 1px 5px rgba(191, 196, 201, 0.24));
+
+        & svg path {
+            fill: $dark40-color;
+        }
+
+        @media (max-width: 360px) {
+            padding: 0;
+            width: 32px;
+            height: 32px;
+
+            & svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    .view-controls__control:first-child {
+        margin-right: 16px;
+    }
+
+    .active {
+        background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+
+        & svg path {
+            fill: $white-color;
+        }
+    }
+
+    .search-open {
+        transition: all .1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        @media (max-width: 360px) {
+            visibility: visible;
+            position: absolute;
+            z-index: 8;
+            width: 288px;
+            height: 38px;
+            padding: 7px 16px;
+
+            &::placeholder {
+                @include body-small;
+            }
+        }
+    }
+
+    .cross-active {
+        transition: all 1s cubic-bezier(0.075, 0.82, 0.165, 1);
+
+        @media (max-width: 360px) {
+            content: url(../../assets/svg/cross.svg);
+            display: inline-block;
+            position: absolute;
+            z-index: 9;
+            right: -242px;
+            top: 10px;
+        }
+    }
+
+
+}

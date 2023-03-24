@@ -1,0 +1,88 @@
+@import '../../App.variables.scss';
+
+.slider__wrapp {
+    width: 445px;
+
+    @media (max-width: 768px) {
+        width: 136px;
+        height: 238px;
+    }
+
+    @media (max-width: 360px) {
+        width: 188px;
+        height: 300px;
+    }
+
+    .slide {
+        width: 65px;
+        height: 86px;
+        border: 1px solid $dark40-color;
+        border-radius: 3px;
+    }
+}
+
+.swiper-main {
+    margin-bottom: 20px;
+
+    @media (max-width: 768px) {
+        width: 136px;
+        height: 238px;
+    }
+
+    @media (max-width: 360px) {
+        width: 188px;
+        height: 300px;
+    }
+}
+
+.swiper-pagination {
+    display: none !important;
+
+    @media (max-width: 768px) {
+        display: block !important;
+    }
+}
+
+.swiper-pagination-bullet-active {
+    background: $text-color !important;
+}
+
+.swiper-mini {
+
+    &::before {
+        content: '';
+        display: block;
+        width: 65px;
+        height: 86px;
+        background: linear-gradient(to right, $white-color, transparent);
+        position: absolute;
+        z-index: 100;
+    }
+
+    &::after {
+        content: '';
+        display: block;
+        width: 65px;
+        height: 86px;
+        background: linear-gradient(to left, $white-color, transparent);
+        position: absolute;
+        z-index: 100;
+        right: 0;
+        top: 0;
+    }
+
+    @media (max-width: 768px) {
+        display: none !important;
+    }
+
+    .swiper-slide {
+        width: 67px !important;
+    }
+}
+
+
+
+.swiper-slide-thumb-active {
+    border: 1px solid $accept-color !important;
+    border-radius: 3px;
+}

@@ -1,0 +1,108 @@
+@import '../../App.variables.scss';
+
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.calendar {
+    display: block;
+    width: 256px;
+    background: $white-color;
+
+    box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18), 0px 1px 5px rgba(191, 196, 201, 0.24);
+    border-radius: 8px;
+    padding: 16px;
+
+    .calendar__header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        display: block;
+
+        .month-display {
+            align-items: center;
+            height: 40px;
+        }
+
+        .month-label {
+            flex: 1;
+            border: none;
+            outline: none;
+            @include body-large;
+            color: $dark40-color;
+        }
+
+        .arrow {
+            text-align: center;
+            flex-basis: 15%;
+            cursor: pointer;
+            transition: .2s;
+            height: 70%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-repeat: no-repeat;
+
+        }
+
+        .fa-angle-left {
+            background-image: url(../../assets/svg/open-feedbacks.svg);
+        }
+
+        .fa-angle-right {
+            background-image: url(../../assets/svg/close-feedbacks.svg);
+        }
+    }
+
+    .day-names {
+        @include info-large;
+        color: $button-color;
+
+        & .week-days {
+            width: 32px;
+            height: 32px;
+            border: none;
+            padding: 8px;
+        }
+
+
+    }
+
+    .day {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 32px;
+        height: 32px;
+        @include info-small;
+        color: rgb(167, 167, 167);
+        border: 1px solid $white-color;
+
+        &:hover {
+            border: 1px solid #BFC4C9;
+            border-radius: 16px;
+        }
+
+        &.today {
+            color: $search-color;
+        }
+
+        &.active {
+            color: $text-color;
+        }
+
+        &.selected {
+            background-image: linear-gradient(231.58deg, rgb(248, 54, 0) -53.35%, rgb(249, 212, 35) 297.76%);
+            color: $white-color;
+            border: 1px solid $search-color;
+            border-radius: 16px;
+        }
+
+        &.weekend {
+            background: $negative-bg-color;
+            border-radius: 16px;
+        }
+    }
+}

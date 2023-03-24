@@ -1,0 +1,13 @@
+@import '../../App.variables.scss';
+
+.main {
+    flex: 1 1 auto;
+
+    .main__container {
+        display: flex;
+    }
+
+    .content-wrap {
+        flex: 1 1 80%;
+    }
+}

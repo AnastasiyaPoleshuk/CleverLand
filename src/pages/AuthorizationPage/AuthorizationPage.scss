@@ -1,0 +1,88 @@
+@import '../../App.variables.scss';
+
+.auth {
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+    position: relative;
+
+    .registration__title {
+        position: absolute;
+        top: 180px;
+        left: 50%;
+        transform: translateX(-50%);
+        @include h3;
+        color: $white-color;
+
+        @media (max-width: 360px) {
+            @include h5;
+            top: 16px;
+        }
+    }
+
+    .registration__block {
+        background: $white-color;
+        position: absolute;
+        top: 266px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 16px;
+
+        @media (max-width: 360px) {
+            top: 56px;
+        }
+    }
+
+    .registration__redirect {
+        @include body-large;
+        color: #727272;
+        margin-top: 16px;
+    }
+
+    .registration__redirect-link {
+        @include button-small;
+        color: $text-color;
+        margin-left: 16px;
+
+        &::after {
+            content: url(../../assets/svg/arrow-right.svg);
+            margin: 0 0px 0px 15px;
+        }
+    }
+
+    .registration-success__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 32px;
+
+        .success-flow__title {
+            @include h4;
+        }
+
+        .success-flow__message {
+            @include body-large;
+            text-align: center;
+            width: 63%;
+
+            @media (max-width: 360px) {
+                width: 100%;
+            }
+        }
+
+        .success-flow__button {
+            width: 410px;
+            text-align: center;
+            @include button-large;
+            color: $white-color;
+            background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
+            border-radius: 30px;
+            padding: 14px 0px;
+
+            @media (max-width: 360px) {
+                width: 256px;
+            }
+        }
+    }
+}

@@ -1,0 +1,10 @@
+@import '../../App.variables.scss';
+
+.profile__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 92px;
+    margin-bottom: 62px;
+}

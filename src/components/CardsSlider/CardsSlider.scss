@@ -1,0 +1,25 @@
+@import '../../App.variables.scss';
+
+.cards-swiper {
+    .cards-swiper__item {
+        width: fit-content;
+    }
+
+    .swiper-pagination {
+        display: block !important;
+    }
+
+    .swiper-pagination-bullets {
+        left: 50%;
+    }
+
+    .swiper-pagination-bullet:only-child {
+        display: block !important;
+    }
+
+
+
+    .swiper-pagination-bullet-active {
+        background: $text-color !important;
+    }
+}
