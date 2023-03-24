@@ -16,7 +16,7 @@ interface IProps {
 export const Feedbacks = (props: IProps) => {
     const { comments } = props;
     // @ts-ignore
-    const sortedComments = comments.sort((a, b) => moment(b.createdAt) - moment(a.createdAt));
+    const sortedComments = comments?.sort((a, b) => moment(b.createdAt) - moment(a.createdAt));
 
     const createRating = (comment: IBookComments) => {
         let ratingArr: JSX.Element[] = [];

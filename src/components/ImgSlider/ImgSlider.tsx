@@ -35,11 +35,11 @@ export function ImgSlider(props: Iprops) {
                 data-test-id='slide-big'
             >
                 {
-                    img.length === 0 ?
+                    img?.length === 0 ?
                         <SwiperSlide>
-                            <img src={altPath} alt="фото книги" className={img.length > 0 ? 'main-info__img' : 'main-info__img-alt'} />
+                            <img src={altPath} alt="фото книги" className={img?.length > 0 ? 'main-info__img' : 'main-info__img-alt'} />
                         </SwiperSlide>
-                        : img.map((item) => <SwiperSlide key={item.url} >
+                        : img?.map((item) => <SwiperSlide key={item.url} >
                             <img src={`${CONSTANTS.URL}${item.url}`} alt="фото книги" className="main-info__img" />
                         </SwiperSlide>
                         )
@@ -48,16 +48,16 @@ export function ImgSlider(props: Iprops) {
             <Swiper
                 onSwiper={(swiper) => setThumbsSwiper(swiper)}
                 spaceBetween={32}
-                slidesPerView={img.length > 5 ? 5 : img.length}
+                slidesPerView={img?.length > 5 ? 5 : img?.length}
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
                 className="swiper-mini"
             >
                 {
-                    img.length <= 1 ?
+                    img?.length <= 1 ?
                         null
-                        : img.map((item) => <SwiperSlide key={item.url} data-test-id='slide-mini'>
+                        : img?.map((item) => <SwiperSlide key={item.url} data-test-id='slide-mini'>
                             <img src={`${CONSTANTS.URL}${item.url}`} alt="фото книги" className="slide" />
                         </SwiperSlide>
                         )

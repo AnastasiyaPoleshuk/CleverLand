@@ -29,7 +29,9 @@
     }
 
     .header__burger {
-        display: none;
+        // display: none;
+        visibility: hidden;
+        opacity: 0;
 
         &,
         &::before,
@@ -37,14 +39,24 @@
         &-active,
         &-active::before,
         &-active::after {
-            width: 32px;
-            height: 2px;
+            visibility: hidden;
+            opacity: 0;
+            width: 0;
+            height: 0;
             background-color: $text-color;
             border: none;
             border-radius: 5px;
             margin-right: 24px;
             cursor: pointer;
             transition: transform .5s;
+
+            @media (max-width: 768px) {
+                // display: inline-block;
+                visibility: visible;
+                opacity: 1;
+                width: 32px;
+                height: 2px;
+            }
 
             @media (max-width: 360px) {
                 width: 24px;
@@ -94,10 +106,10 @@
         }
 
         @media (max-width: 768px) {
-            display: inline-block;
-
+            // display: inline-block;
+            visibility: visible;
+            opacity: 1;
         }
-
 
     }
 
