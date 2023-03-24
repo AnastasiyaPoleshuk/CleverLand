@@ -49,7 +49,7 @@ export const BookPage = () => {
                         to={`/books/${category}`}
                         data-test-id='breadcrumbs-link'
                     >
-                        {book ? category === 'all' ? 'Все книги' : book.categories.join('') : 'Программирование'}
+                        {book ? category === 'all' ? 'Все книги' : 'Программирование' : 'Программирование'}
                     </NavLink>
                     <span data-test-id='book-name'>
                         {book ? ` / ${book.title}` : ' / '}
@@ -74,7 +74,9 @@ export const BookPage = () => {
                     }
                 </ModalWindow>
             }
-
+            {
+                isError && <AlertModal />
+            }
         </React.Fragment>
 
     );

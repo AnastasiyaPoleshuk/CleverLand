@@ -33,7 +33,7 @@ export const BookComponent = ({ book }: { book: IGetBook }) => {
                     <h3 className="main-info__title" data-test-id='book-title'>
                         {book.title ? ` / ${book.title}` : ' / '}
                     </h3>
-                    <h5 className="main-info__author">{book.authors.join(' ')}</h5>
+                    <h5 className="main-info__author">{book.authors?.join(' ')}</h5>
                     <button
                         type='button'
                         className={`main-info-book  ${book.delivery ? 'busy' : book.booking ? book.booking.customerId === user.id ? 'booked-user' : 'booked' : ''}`}
@@ -92,7 +92,7 @@ export const BookComponent = ({ book }: { book: IGetBook }) => {
                         <table>
                             <tr>
                                 <td className='table-key'>Жанр</td>
-                                <td className='table-value'>{book.categories.join(' ')}</td>
+                                <td className='table-value'>{book.categories?.join(' ')}</td>
                             </tr>
                             <tr>
                                 <td className='table-key'>Вес</td>
