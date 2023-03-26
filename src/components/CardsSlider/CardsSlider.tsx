@@ -10,7 +10,7 @@ export const CardsSlider = ({ cards }: { cards: JSX.Element[] }) => (
         pagination={true}
         modules={[Pagination]}
         className="cards-swiper"
-
+        data-test-id='history'
     >
         {
             cards && cards.map(card => <SwiperSlide className="cards-swiper__item" key={card.key} data-test-id='history-slide'>{card}</SwiperSlide>)

@@ -52,11 +52,11 @@ export const Profile = () => {
 
     }, [books]);
 
-    useEffect(() =>{
+    useEffect(() => {
         setAlertText(alert.text);
-    },[alert])
+    }, [alert])
 
-    function createProfileBooksData () {
+    function createProfileBooksData() {
         const profileBooksArr = [];
 
         if (user.booking && books.length > 0) {
@@ -74,6 +74,17 @@ export const Profile = () => {
             }
 
             profileBooksArr.push(profileBooksInfo);
+        } else {
+            profileBooksArr.push({
+                title: 'Забронированная книга',
+                subtitle: 'Здесь вы можете просмотреть забронированную книгу, а так же отменить бронь',
+                warningTitle: 'Дата бронирования книги истекла ',
+                warningSubtitle: 'Через 24 часа книга будет  доступна всем',
+                isWarning: false,
+                emptyFieldText: ['Забронируйте книгу', ' и она отобразится'],
+                isEmpty: true,
+                component: undefined
+            })
         }
 
         if (user.delivery && books.length > 0) {
@@ -91,6 +102,17 @@ export const Profile = () => {
 
             profileBooksArr.push(profileBooksInfo);
 
+        } else {
+            profileBooksArr.push({
+                title: 'Книга которую взяли',
+                subtitle: 'Здесь можете просмотреть информацию о книге и узнать сроки возврата',
+                warningTitle: 'Вышел срок пользования книги',
+                warningSubtitle: 'Верните книгу, пожалуйста',
+                isWarning: false,
+                emptyFieldText: ['Прочитав книгу,', 'она отобразится в истории'],
+                isEmpty: true,
+                component: undefined
+            })
         }
 
         if (user.history && books.length > 0) {
@@ -109,6 +131,18 @@ export const Profile = () => {
 
             profileBooksArr.push(profileBooksInfo);
         }
+        // else {
+        //     profileBooksArr.push({
+        //         title: 'История',
+        //         subtitle: 'Список прочитанных книг',
+        //         warningTitle: '',
+        //         warningSubtitle: '',
+        //         isWarning: false,
+        //         emptyFieldText: ['Вы не читали книг', 'из нашей библиотеки'],
+        //         isEmpty: true,
+        //         component: undefined
+        //     })
+        // }
 
         return profileBooksArr;
     }
@@ -130,7 +164,7 @@ export const Profile = () => {
                     userId={user.id}
                 />
                 {
-                    booksInfoComponents.length  > 0 && booksInfoComponents.map(profileBook => <ProfileBooks key={profileBook.title} data={profileBook} />)
+                    booksInfoComponents.length > 0 && booksInfoComponents.map(profileBook => <ProfileBooks key={profileBook.title} data={profileBook} />)
                 }
             </div>
             {

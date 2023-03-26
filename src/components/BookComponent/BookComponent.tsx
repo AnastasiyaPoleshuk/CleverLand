@@ -13,11 +13,15 @@ import './BookComponent.scss';
 
 export const BookComponent = ({ book }: { book: IGetBook }) => {
     const [disabled, setDisabled] = useState(false);
+    const [isUserCommentButton, setIsUserCommentButton] = useState(false);
     const { openModal, setIdForBooking } = useContext(AppContext);
     const { fullUser: user } = useSelector((state: IStore) => state.fullUser);
 
     useEffect(() => {
         setDisabled(book.booking ? (book.booking.customerId !== user.id ? true : (book.delivery ? true : false)) : (book.delivery ? true : false));
+
+        const hasComment = !!user?.comments?.find(comment => comment.bookId === book.id);
+        setIsUserCommentButton(hasComment)
     }, [book])
 
     const openFeedbacksModal = () => {
@@ -118,12 +122,12 @@ export const BookComponent = ({ book }: { book: IGetBook }) => {
                     <Feedbacks comments={book.comments} />
                     <button
                         type='button'
-                        className='feedbacks__button'
+                        className={`feedbacks__button${isUserCommentButton ? '-user' : ''}`}
                         data-test-id='button-rate-book'
                         disabled={book.booking?.customerId === user.id}
                         onClick={openFeedbacksModal}
                     >
-                        Оценить книгу
+                        {isUserCommentButton ? 'Изменить оценку' : 'Оценить книгу'}
                     </button>
                 </section>
             </div>

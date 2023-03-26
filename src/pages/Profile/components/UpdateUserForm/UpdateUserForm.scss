@@ -1,6 +1,8 @@
 @import '../../../../App.variables.scss';
 
 .update-user__form {
+    width: 100%;
+
     .form__title {
         @include h4;
 
@@ -16,16 +18,34 @@
     }
 
     .form__section-wrap {
+        width: 100%;
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        gap: 30px;
+        gap: 36px;
         margin: 32px 0 52px 0;
 
         @media (max-width: 360px) {
             flex-direction: column;
             margin: 0 0 32px 0;
         }
+    }
+
+    .form__section {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+
+        @media (max-width: 360px) {
+            flex-direction: column;
+        }
+    }
+
+    .form__section-label {
+        width: 100%;
     }
 
     .form__update-btn,
@@ -54,7 +74,7 @@
         outline: 0;
         border: 0;
         border-bottom: 1px solid #BFC4C9;
-        margin-bottom: 30px;
+
 
         &::placeholder {
             @include body-small;

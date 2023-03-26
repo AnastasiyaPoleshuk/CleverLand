@@ -2965,326 +2965,326 @@ const getContent = () => {
     cy.intercept('GET', /categories/, CATEGORIES).as('categories');
 };
 
-describe('Sprint 2', () => {
-    const BOOK_NO_IMAGES = {
-        id: 11,
-        title: 'Сам себе бренд: Искусство самопрезентации',
-        rating: null,
-        issueYear: '2020',
-        description:
-            'Каждый, кому приходилось работать в сфере продаж, подсознательно чувствует, что продает он вовсе не товар. Он продает себя.\n\nЛюбые взаимоотношения, деловые и не только, предполагают сделку. Как подчеркнуть свои достоинства? Как выделиться из толпы? Как вызвать к себе интерес, добиться расположения, завоевать доверие окружающих, покорить вершину и удержаться на ней? В этой энциклопедии «интуитивного маркетинга» собраны советы, подсказки, инструкции, как продать себя подороже.',
-        publish: 'Альпина Паблишер',
-        pages: '263',
-        cover: 'Мягкая обложка',
-        weight: '185',
-        format: '70x100/32',
-        ISBN: '978-0-446-57821-9',
-        producer: 'Полиграфическо-издательский комплекс «Идел-Пресс» филиал АО «ТАТМЕДИА»',
-        authors: ['Гарри Беквит'],
-        images: null,
-        categories: ['Бизнес'],
-        comments: null,
-        booking: null,
-        delivery: null,
-        histories: null,
-    };
-    const BOOK_ONE_IMAGE = {
-        id: 11,
-        title: 'Сам себе бренд: Искусство самопрезентации',
-        rating: null,
-        issueYear: '2020',
-        description:
-            'Каждый, кому приходилось работать в сфере продаж, подсознательно чувствует, что продает он вовсе не товар. Он продает себя.\n\nЛюбые взаимоотношения, деловые и не только, предполагают сделку. Как подчеркнуть свои достоинства? Как выделиться из толпы? Как вызвать к себе интерес, добиться расположения, завоевать доверие окружающих, покорить вершину и удержаться на ней? В этой энциклопедии «интуитивного маркетинга» собраны советы, подсказки, инструкции, как продать себя подороже.',
-        publish: 'Альпина Паблишер',
-        pages: '263',
-        cover: 'Мягкая обложка',
-        weight: '185',
-        format: '70x100/32',
-        ISBN: '978-0-446-57821-9',
-        producer: 'Полиграфическо-издательский комплекс «Идел-Пресс» филиал АО «ТАТМЕДИА»',
-        authors: ['Гарри Беквит'],
-        images: [
-            {
-                url: '/uploads/10858981_0_Sam_sebe_brend_Iskusstvo_samoprezentacii_m_Rarri_Bekvit_Kristin_Bekvit_36345dbe51.jpg',
-            },
-        ],
-        categories: ['Бизнес'],
-        comments: null,
-        booking: null,
-        delivery: null,
-        histories: null,
-    };
-    const BOOK_MORETWO_IMAGE = {
-        id: 11,
-        title: 'Сам себе бренд: Искусство самопрезентации',
-        rating: null,
-        issueYear: '2020',
-        description:
-            'Каждый, кому приходилось работать в сфере продаж, подсознательно чувствует, что продает он вовсе не товар. Он продает себя.\n\nЛюбые взаимоотношения, деловые и не только, предполагают сделку. Как подчеркнуть свои достоинства? Как выделиться из толпы? Как вызвать к себе интерес, добиться расположения, завоевать доверие окружающих, покорить вершину и удержаться на ней? В этой энциклопедии «интуитивного маркетинга» собраны советы, подсказки, инструкции, как продать себя подороже.',
-        publish: 'Альпина Паблишер',
-        pages: '263',
-        cover: 'Мягкая обложка',
-        weight: '185',
-        format: '70x100/32',
-        ISBN: '978-0-446-57821-9',
-        producer: 'Полиграфическо-издательский комплекс «Идел-Пресс» филиал АО «ТАТМЕДИА»',
-        authors: ['Гарри Беквит'],
-        images: [
-            {
-                url: '/uploads/10858981_0_Sam_sebe_brend_Iskusstvo_samoprezentacii_m_Rarri_Bekvit_Kristin_Bekvit_36345dbe51.jpg',
-            },
-            {
-                url: '/uploads/10442229_0_5d1c5827e4.jpg',
-            },
-            {
-                url: '/uploads/1027828_0_93fce05fab.jpg',
-            },
-        ],
-        categories: ['Бизнес'],
-        comments: [
-            {
-                id: 842,
-                rating: 5,
-                text: 'Тест',
-                createdAt: '2023-03-18T16:06:31.615Z',
-                user: {
-                    commentUserId: 960,
-                    firstName: 'Докторская',
-                    lastName: 'Колбаса',
-                    avatarUrl: null,
-                },
-            },
-            {
-                id: 843,
-                rating: 5,
-                text: 'Тест[копия]',
-                createdAt: '2023-03-18T16:07:20.646Z',
-                user: {
-                    commentUserId: 959,
-                    firstName: 'Имя',
-                    lastName: 'Фамилия',
-                    avatarUrl: null,
-                },
-            },
-            {
-                id: 844,
-                rating: 3,
-                text: '',
-                createdAt: '2023-03-18T16:10:31.608Z',
-                user: {
-                    commentUserId: 974,
-                    firstName: 'Vit',
-                    lastName: 'Vit7',
-                    avatarUrl: null,
-                },
-            },
-            {
-                id: 858,
-                rating: 3,
-                text: '1212',
-                createdAt: '2023-03-18T16:58:04.568Z',
-                user: {
-                    commentUserId: 995,
-                    firstName: 'Toster123',
-                    lastName: 'Toster123',
-                    avatarUrl: null,
-                },
-            },
-        ],
-        booking: null,
-        delivery: null,
-        histories: null,
-    };
+// describe('Sprint 2', () => {
+//     const BOOK_NO_IMAGES = {
+//         id: 11,
+//         title: 'Сам себе бренд: Искусство самопрезентации',
+//         rating: null,
+//         issueYear: '2020',
+//         description:
+//             'Каждый, кому приходилось работать в сфере продаж, подсознательно чувствует, что продает он вовсе не товар. Он продает себя.\n\nЛюбые взаимоотношения, деловые и не только, предполагают сделку. Как подчеркнуть свои достоинства? Как выделиться из толпы? Как вызвать к себе интерес, добиться расположения, завоевать доверие окружающих, покорить вершину и удержаться на ней? В этой энциклопедии «интуитивного маркетинга» собраны советы, подсказки, инструкции, как продать себя подороже.',
+//         publish: 'Альпина Паблишер',
+//         pages: '263',
+//         cover: 'Мягкая обложка',
+//         weight: '185',
+//         format: '70x100/32',
+//         ISBN: '978-0-446-57821-9',
+//         producer: 'Полиграфическо-издательский комплекс «Идел-Пресс» филиал АО «ТАТМЕДИА»',
+//         authors: ['Гарри Беквит'],
+//         images: null,
+//         categories: ['Бизнес'],
+//         comments: null,
+//         booking: null,
+//         delivery: null,
+//         histories: null,
+//     };
+//     const BOOK_ONE_IMAGE = {
+//         id: 11,
+//         title: 'Сам себе бренд: Искусство самопрезентации',
+//         rating: null,
+//         issueYear: '2020',
+//         description:
+//             'Каждый, кому приходилось работать в сфере продаж, подсознательно чувствует, что продает он вовсе не товар. Он продает себя.\n\nЛюбые взаимоотношения, деловые и не только, предполагают сделку. Как подчеркнуть свои достоинства? Как выделиться из толпы? Как вызвать к себе интерес, добиться расположения, завоевать доверие окружающих, покорить вершину и удержаться на ней? В этой энциклопедии «интуитивного маркетинга» собраны советы, подсказки, инструкции, как продать себя подороже.',
+//         publish: 'Альпина Паблишер',
+//         pages: '263',
+//         cover: 'Мягкая обложка',
+//         weight: '185',
+//         format: '70x100/32',
+//         ISBN: '978-0-446-57821-9',
+//         producer: 'Полиграфическо-издательский комплекс «Идел-Пресс» филиал АО «ТАТМЕДИА»',
+//         authors: ['Гарри Беквит'],
+//         images: [
+//             {
+//                 url: '/uploads/10858981_0_Sam_sebe_brend_Iskusstvo_samoprezentacii_m_Rarri_Bekvit_Kristin_Bekvit_36345dbe51.jpg',
+//             },
+//         ],
+//         categories: ['Бизнес'],
+//         comments: null,
+//         booking: null,
+//         delivery: null,
+//         histories: null,
+//     };
+//     const BOOK_MORETWO_IMAGE = {
+//         id: 11,
+//         title: 'Сам себе бренд: Искусство самопрезентации',
+//         rating: null,
+//         issueYear: '2020',
+//         description:
+//             'Каждый, кому приходилось работать в сфере продаж, подсознательно чувствует, что продает он вовсе не товар. Он продает себя.\n\nЛюбые взаимоотношения, деловые и не только, предполагают сделку. Как подчеркнуть свои достоинства? Как выделиться из толпы? Как вызвать к себе интерес, добиться расположения, завоевать доверие окружающих, покорить вершину и удержаться на ней? В этой энциклопедии «интуитивного маркетинга» собраны советы, подсказки, инструкции, как продать себя подороже.',
+//         publish: 'Альпина Паблишер',
+//         pages: '263',
+//         cover: 'Мягкая обложка',
+//         weight: '185',
+//         format: '70x100/32',
+//         ISBN: '978-0-446-57821-9',
+//         producer: 'Полиграфическо-издательский комплекс «Идел-Пресс» филиал АО «ТАТМЕДИА»',
+//         authors: ['Гарри Беквит'],
+//         images: [
+//             {
+//                 url: '/uploads/10858981_0_Sam_sebe_brend_Iskusstvo_samoprezentacii_m_Rarri_Bekvit_Kristin_Bekvit_36345dbe51.jpg',
+//             },
+//             {
+//                 url: '/uploads/10442229_0_5d1c5827e4.jpg',
+//             },
+//             {
+//                 url: '/uploads/1027828_0_93fce05fab.jpg',
+//             },
+//         ],
+//         categories: ['Бизнес'],
+//         comments: [
+//             {
+//                 id: 842,
+//                 rating: 5,
+//                 text: 'Тест',
+//                 createdAt: '2023-03-18T16:06:31.615Z',
+//                 user: {
+//                     commentUserId: 960,
+//                     firstName: 'Докторская',
+//                     lastName: 'Колбаса',
+//                     avatarUrl: null,
+//                 },
+//             },
+//             {
+//                 id: 843,
+//                 rating: 5,
+//                 text: 'Тест[копия]',
+//                 createdAt: '2023-03-18T16:07:20.646Z',
+//                 user: {
+//                     commentUserId: 959,
+//                     firstName: 'Имя',
+//                     lastName: 'Фамилия',
+//                     avatarUrl: null,
+//                 },
+//             },
+//             {
+//                 id: 844,
+//                 rating: 3,
+//                 text: '',
+//                 createdAt: '2023-03-18T16:10:31.608Z',
+//                 user: {
+//                     commentUserId: 974,
+//                     firstName: 'Vit',
+//                     lastName: 'Vit7',
+//                     avatarUrl: null,
+//                 },
+//             },
+//             {
+//                 id: 858,
+//                 rating: 3,
+//                 text: '1212',
+//                 createdAt: '2023-03-18T16:58:04.568Z',
+//                 user: {
+//                     commentUserId: 995,
+//                     firstName: 'Toster123',
+//                     lastName: 'Toster123',
+//                     avatarUrl: null,
+//                 },
+//             },
+//         ],
+//         booking: null,
+//         delivery: null,
+//         histories: null,
+//     };
 
-    const getBook = (book) => {
-        cy.intercept('GET', /books\/11/, book).as('book');
-    };
+//     const getBook = (book) => {
+//         cy.intercept('GET', /books\/11/, book).as('book');
+//     };
 
-    const sliderTests = (width, height) => {
-        it('test not foto', () => {
-            cy.viewport(width, height);
-            getFullData(true);
-            getBook(BOOK_NO_IMAGES);
-            cy.visit('http://localhost:3000');
-            cy.wait(['@books', '@categories', '@me']);
-            cy.visit('http://localhost:3000/#/books/all/11');
-            cy.wait('@book');
-            if (width !== 768) {
-                cy.get('[data-test-id=app]').screenshot(`1-slider-no-photo-${width}px`, {
-                    clip: { x: 0, y: 0, width: width, height: 950 },
-                });
-            }
-        });
+//     const sliderTests = (width, height) => {
+//         it('test not foto', () => {
+//             cy.viewport(width, height);
+//             getFullData(true);
+//             getBook(BOOK_NO_IMAGES);
+//             cy.visit('http://localhost:3000');
+//             cy.wait(['@books', '@categories', '@me']);
+//             cy.visit('http://localhost:3000/#/books/all/11');
+//             cy.wait('@book');
+//             if (width !== 768) {
+//                 cy.get('[data-test-id=app]').screenshot(`1-slider-no-photo-${width}px`, {
+//                     clip: { x: 0, y: 0, width: width, height: 950 },
+//                 });
+//             }
+//         });
 
-        it('slider one foto', () => {
-            cy.viewport(width, height);
-            getFullData(true);
-            getBook(BOOK_ONE_IMAGE);
-            cy.visit('http://localhost:3000');
-            cy.wait(['@books', '@categories', '@me']);
-            cy.visit('http://localhost:3000/#/books/all/11');
-            cy.wait('@book');
-            if (width !== 320) {
-                cy.get('[data-test-id=app]').screenshot(`2-slider-one-photo-${width}px`, {
-                    clip: { x: 0, y: 0, width: width, height },
-                });
-            }
-        });
+//         it('slider one foto', () => {
+//             cy.viewport(width, height);
+//             getFullData(true);
+//             getBook(BOOK_ONE_IMAGE);
+//             cy.visit('http://localhost:3000');
+//             cy.wait(['@books', '@categories', '@me']);
+//             cy.visit('http://localhost:3000/#/books/all/11');
+//             cy.wait('@book');
+//             if (width !== 320) {
+//                 cy.get('[data-test-id=app]').screenshot(`2-slider-one-photo-${width}px`, {
+//                     clip: { x: 0, y: 0, width: width, height },
+//                 });
+//             }
+//         });
 
-        it('slider more two foto', () => {
-            cy.viewport(width, height);
-            getFullData(true);
-            getBook(BOOK_MORETWO_IMAGE);
-            cy.visit('http://localhost:3000');
-            cy.wait(['@books', '@categories', '@me']);
-            cy.visit('http://localhost:3000/#/books/all/11');
-            cy.wait('@book');
-            if (width !== 320) {
-                cy.get('[data-test-id=app]').screenshot(`3-slider-more-two-photo-${width}px`, {
-                    clip: { x: 0, y: 0, width: width, height },
-                });
-            }
-            cy.get('[data-test-id=slide-big]').screenshot(`4-slider-before-${width}px`);
-            if (width !== 1440) {
-                cy.get('.swiper-pagination-bullet').eq(1).should('be.exist').click();
-            } else {
-                cy.get('[data-test-id=slide-mini]')
-                    .get('.swiper-slide-visible')
-                    .eq(1)
-                    .should('be.exist')
-                    .click();
-                cy.get('[data-test-id=slide-big]').screenshot(`5-slider-after-${width}px`);
-            }
-        });
-    };
+//         it('slider more two foto', () => {
+//             cy.viewport(width, height);
+//             getFullData(true);
+//             getBook(BOOK_MORETWO_IMAGE);
+//             cy.visit('http://localhost:3000');
+//             cy.wait(['@books', '@categories', '@me']);
+//             cy.visit('http://localhost:3000/#/books/all/11');
+//             cy.wait('@book');
+//             if (width !== 320) {
+//                 cy.get('[data-test-id=app]').screenshot(`3-slider-more-two-photo-${width}px`, {
+//                     clip: { x: 0, y: 0, width: width, height },
+//                 });
+//             }
+//             cy.get('[data-test-id=slide-big]').screenshot(`4-slider-before-${width}px`);
+//             if (width !== 1440) {
+//                 cy.get('.swiper-pagination-bullet').eq(1).should('be.exist').click();
+//             } else {
+//                 cy.get('[data-test-id=slide-mini]')
+//                     .get('.swiper-slide-visible')
+//                     .eq(1)
+//                     .should('be.exist')
+//                     .click();
+//                 cy.get('[data-test-id=slide-big]').screenshot(`5-slider-after-${width}px`);
+//             }
+//         });
+//     };
 
-    describe('slider tests', () => {
-        const login = 'Wally123';
-        const pass = 'GarrusWally123';
+//     describe('slider tests', () => {
+//         const login = 'Wally123';
+//         const pass = 'GarrusWally123';
 
-        beforeEach(() => {
-            cy.session([login, pass], () => {
-                cy.intercept('POST', /local/, USER_AUTH).as('authorize');
-                cy.visit('http://localhost:3000/#/auth');
-                cy.get('[data-test-id=auth-form] input[name=identifier]').should('be.visible').type(login);
-                cy.get('[data-test-id=auth-form] input[name=password]').should('be.visible').type(pass);
-                cy.get('[type=submit]').should('be.exist').click();
-                cy.wait('@authorize');
-                cy.get('[data-test-id=main-page]').should('be.visible');
-            });
-        });
+//         beforeEach(() => {
+//             cy.session([login, pass], () => {
+//                 cy.intercept('POST', /local/, USER_AUTH).as('authorize');
+//                 cy.visit('http://localhost:3000/#/auth');
+//                 cy.get('[data-test-id=auth-form] input[name=identifier]').should('be.visible').type(login);
+//                 cy.get('[data-test-id=auth-form] input[name=password]').should('be.visible').type(pass);
+//                 cy.get('[type=submit]').should('be.exist').click();
+//                 cy.wait('@authorize');
+//                 cy.get('[data-test-id=main-page]').should('be.visible');
+//             });
+//         });
 
-        it('test layout burger-menu', () => {
-            cy.viewport(1440, 900);
-            getFullData(true);
-            cy.visit('http://localhost:3000');
-            cy.wait(['@books', '@categories', '@me']);
-            cy.get('[data-test-id=button-burger]').should('not.be.visible');
-            cy.get('[data-test-id=app]').screenshot('6-app-1440', {
-                clip: { x: 0, y: 0, width: 1440, height: 900 },
-            });
-        });
+//         it('test layout burger-menu', () => {
+//             cy.viewport(1440, 900);
+//             getFullData(true);
+//             cy.visit('http://localhost:3000');
+//             cy.wait(['@books', '@categories', '@me']);
+//             cy.get('[data-test-id=button-burger]').should('not.be.visible');
+//             cy.get('[data-test-id=app]').screenshot('6-app-1440', {
+//                 clip: { x: 0, y: 0, width: 1440, height: 900 },
+//             });
+//         });
 
-        sliderTests(1440, 900);
+//         sliderTests(1440, 900);
 
-        it('test navigation view', () => {
-            cy.viewport(1440, 900);
-            getFullData(true);
-            cy.visit('http://localhost:3000');
-            cy.wait(['@books', '@categories', '@me']);
-            cy.get('[data-test-id=navigation-showcase]').should('be.exist').click();
-            cy.get('[data-test-id=navigation-books]').should('not.be.visible');
-            cy.get('[data-test-id=navigation-showcase]').click();
-            cy.get('[data-test-id=navigation-books]').should('be.visible').should('be.exist');
-            cy.get('[data-test-id=navigation-terms]').should('be.exist').click();
-            cy.get('[data-test-id=navigation-books]').should('not.be.visible');
-        });
+//         it('test navigation view', () => {
+//             cy.viewport(1440, 900);
+//             getFullData(true);
+//             cy.visit('http://localhost:3000');
+//             cy.wait(['@books', '@categories', '@me']);
+//             cy.get('[data-test-id=navigation-showcase]').should('be.exist').click();
+//             cy.get('[data-test-id=navigation-books]').should('not.be.visible');
+//             cy.get('[data-test-id=navigation-showcase]').click();
+//             cy.get('[data-test-id=navigation-books]').should('be.visible').should('be.exist');
+//             cy.get('[data-test-id=navigation-terms]').should('be.exist').click();
+//             cy.get('[data-test-id=navigation-books]').should('not.be.visible');
+//         });
 
-        it('test burger-menu', () => {
-            cy.viewport(768, 800);
-            getFullData(true);
-            cy.visit('http://localhost:3000');
-            cy.wait(['@books', '@categories', '@me']);
-            cy.get('[data-test-id=button-burger]').should('be.visible');
-            cy.get('[data-test-id=app]').screenshot('7-app-768px', {
-                clip: { x: 0, y: 0, width: 768, height: 1000 },
-            });
-            cy.get('[data-test-id=button-burger]').should('be.exist').click();
-            cy.get('[data-test-id=app]').screenshot('8-app-burger-menu-open-768px', {
-                clip: { x: 0, y: 0, width: 768, height: 1000 },
-            });
-            cy.get('[data-test-id=button-burger]').click();
-            cy.get('[data-test-id=app]').screenshot('9-app -burger-menu-close-768px', {
-                clip: { x: 0, y: 0, width: 768, height: 1000 },
-            });
-            cy.get('[data-test-id=button-burger]').click();
-            cy.get('[data-test-id=app]').click('right', { force: true });
-            cy.get('[data-test-id=app]').screenshot(
-                '10-app-burger-menu-close-click-not-burger-menu-768px',
-                {
-                    clip: { x: 0, y: 0, width: 1440, height: 1000 },
-                },
-            );
-        });
+//         it('test burger-menu', () => {
+//             cy.viewport(768, 800);
+//             getFullData(true);
+//             cy.visit('http://localhost:3000');
+//             cy.wait(['@books', '@categories', '@me']);
+//             cy.get('[data-test-id=button-burger]').should('be.visible');
+//             cy.get('[data-test-id=app]').screenshot('7-app-768px', {
+//                 clip: { x: 0, y: 0, width: 768, height: 1000 },
+//             });
+//             cy.get('[data-test-id=button-burger]').should('be.exist').click();
+//             cy.get('[data-test-id=app]').screenshot('8-app-burger-menu-open-768px', {
+//                 clip: { x: 0, y: 0, width: 768, height: 1000 },
+//             });
+//             cy.get('[data-test-id=button-burger]').click();
+//             cy.get('[data-test-id=app]').screenshot('9-app -burger-menu-close-768px', {
+//                 clip: { x: 0, y: 0, width: 768, height: 1000 },
+//             });
+//             cy.get('[data-test-id=button-burger]').click();
+//             cy.get('[data-test-id=app]').click('right', { force: true });
+//             cy.get('[data-test-id=app]').screenshot(
+//                 '10-app-burger-menu-close-click-not-burger-menu-768px',
+//                 {
+//                     clip: { x: 0, y: 0, width: 1440, height: 1000 },
+//                 },
+//             );
+//         });
 
-        sliderTests(768, 800);
+//         sliderTests(768, 800);
 
-        it('test navigation view', () => {
-            cy.viewport(768, 800);
-            getFullData(true);
-            cy.visit('http://localhost:3000');
-            cy.wait(['@books', '@categories', '@me']);
-            cy.get('[data-test-id=button-burger]').click();
-            cy.get('[data-test-id=burger-showcase]').should('be.exist').click();
-            cy.get('[data-test-id=burger-books]').should('not.be.visible');
-            cy.get('[data-test-id=burger-showcase]').click();
-            cy.get('[data-test-id=burger-books]').should('be.visible').should('be.exist');
-            cy.get('[data-test-id=burger-terms]').should('be.exist').click();
-            cy.get('[data-test-id=burger-books]').should('not.be.visible');
-        });
+//         it('test navigation view', () => {
+//             cy.viewport(768, 800);
+//             getFullData(true);
+//             cy.visit('http://localhost:3000');
+//             cy.wait(['@books', '@categories', '@me']);
+//             cy.get('[data-test-id=button-burger]').click();
+//             cy.get('[data-test-id=burger-showcase]').should('be.exist').click();
+//             cy.get('[data-test-id=burger-books]').should('not.be.visible');
+//             cy.get('[data-test-id=burger-showcase]').click();
+//             cy.get('[data-test-id=burger-books]').should('be.visible').should('be.exist');
+//             cy.get('[data-test-id=burger-terms]').should('be.exist').click();
+//             cy.get('[data-test-id=burger-books]').should('not.be.visible');
+//         });
 
-        it('test layout burger-menu', () => {
-            cy.viewport(320, 600);
-            getFullData(true);
-            cy.visit('http://localhost:3000');
-            cy.wait(['@books', '@categories', '@me']);
-            cy.get('[data-test-id=button-burger]').should('be.visible');
-            cy.get('[data-test-id=app]').screenshot('11-app-320px', {
-                clip: { x: 0, y: 0, width: 320, height: 600 },
-            });
-            cy.get('[data-test-id=button-burger]').click();
-            cy.get('[data-test-id=app]').screenshot('12-app-burger-menu-open-320px', {
-                clip: { x: 0, y: 0, width: 320, height: 600 },
-            });
-            cy.get('[data-test-id=button-burger]').click();
-            cy.get('[data-test-id=app]').screenshot('13-app-burger-menu-close-320px', {
-                clip: { x: 0, y: 0, width: 320, height: 600 },
-            });
-            cy.get('[data-test-id=button-burger]').click();
-            cy.get('[data-test-id=app]').click('right', { force: true });
-            cy.get('[data-test-id=app]').screenshot(
-                '14-app-burger-menu-close-click-not-burger-menu-320px',
-                {
-                    clip: { x: 0, y: 0, width: 320, height: 600 },
-                },
-            );
-        });
+//         it('test layout burger-menu', () => {
+//             cy.viewport(320, 600);
+//             getFullData(true);
+//             cy.visit('http://localhost:3000');
+//             cy.wait(['@books', '@categories', '@me']);
+//             cy.get('[data-test-id=button-burger]').should('be.visible');
+//             cy.get('[data-test-id=app]').screenshot('11-app-320px', {
+//                 clip: { x: 0, y: 0, width: 320, height: 600 },
+//             });
+//             cy.get('[data-test-id=button-burger]').click();
+//             cy.get('[data-test-id=app]').screenshot('12-app-burger-menu-open-320px', {
+//                 clip: { x: 0, y: 0, width: 320, height: 600 },
+//             });
+//             cy.get('[data-test-id=button-burger]').click();
+//             cy.get('[data-test-id=app]').screenshot('13-app-burger-menu-close-320px', {
+//                 clip: { x: 0, y: 0, width: 320, height: 600 },
+//             });
+//             cy.get('[data-test-id=button-burger]').click();
+//             cy.get('[data-test-id=app]').click('right', { force: true });
+//             cy.get('[data-test-id=app]').screenshot(
+//                 '14-app-burger-menu-close-click-not-burger-menu-320px',
+//                 {
+//                     clip: { x: 0, y: 0, width: 320, height: 600 },
+//                 },
+//             );
+//         });
 
-        sliderTests(320, 600);
+//         sliderTests(320, 600);
 
-        it('test search', () => {
-            cy.viewport(320, 600);
-            getFullData();
-            cy.visit('http://localhost:3000');
-            cy.wait(['@books', '@categories', '@me']);
-            cy.get('[data-test-id=input-search]').should('not.be.visible');
-            cy.get('[data-test-id=button-search-open]').should('be.exist').click();
-            cy.get('[data-test-id=input-search]').should('be.visible');
-            cy.get('[data-test-id=button-search-close]').should('be.exist').click();
-            cy.get('[data-test-id=input-search]').should('not.be.visible');
-        });
-    });
-});
+//         it('test search', () => {
+//             cy.viewport(320, 600);
+//             getFullData();
+//             cy.visit('http://localhost:3000');
+//             cy.wait(['@books', '@categories', '@me']);
+//             cy.get('[data-test-id=input-search]').should('not.be.visible');
+//             cy.get('[data-test-id=button-search-open]').should('be.exist').click();
+//             cy.get('[data-test-id=input-search]').should('be.visible');
+//             cy.get('[data-test-id=button-search-close]').should('be.exist').click();
+//             cy.get('[data-test-id=input-search]').should('not.be.visible');
+//         });
+//     });
+// });
 
 // describe('Sprint 3', () => {
 //     describe('Get books test', () => {
@@ -5095,13 +5095,13 @@ describe('Sprint 2', () => {
 //     });
 // });
 
-// describe('Sprint 7', () => {
-//     const login = 'Wally13';
-//     const pass = 'GarrusWally13';
+describe('Sprint 7', () => {
+    const login = 'Wally13';
+    const pass = 'GarrusWally13';
 
     // describe('profile page', () => {
     //     it('screenshots', () => {
-    //         cy.intercept('POST', /local/).as('authorize');
+    //         cy.intercept('POST', /local/, USER_AUTH).as('authorize');
     //         cy.intercept('GET', /books/).as('books');
     //         cy.intercept('GET', /categories/).as('categories');
     //         cy.intercept('GET', /me/).as('me');
@@ -5131,23 +5131,23 @@ describe('Sprint 2', () => {
     //     });
     // });
 
-    // describe('Profile functions tests', () => {
-    //     beforeEach(() => {
-    //         cy.session([login, pass], () => {
-    //             cy.intercept('POST', /local/, USER_AUTH).as('authorize');
-    //             cy.visit('http://localhost:3000/#/auth');
-    //             cy.get('[data-test-id=auth-form] input[name=identifier]')
-    //                 .should('be.visible')
-    //                 .type(login);
-    //             cy.get('[data-test-id=auth-form] input[name=password]')
-    //                 .should('be.visible')
-    //                 .type(pass);
-    //             cy.get('[type=submit]').should('be.exist').click();
-    //             cy.wait('@authorize');
-    //             cy.get('[data-test-id=main-page]').should('be.visible');
-    //         });
-    //         cy.viewport(1440, 900);
-    //     });
+    describe('Profile functions tests', () => {
+        beforeEach(() => {
+            cy.session([login, pass], () => {
+                cy.intercept('POST', /local/, USER_AUTH).as('authorize');
+                cy.visit('http://localhost:3000/#/auth');
+                cy.get('[data-test-id=auth-form] input[name=identifier]')
+                    .should('be.visible')
+                    .type(login);
+                cy.get('[data-test-id=auth-form] input[name=password]')
+                    .should('be.visible')
+                    .type(pass);
+                cy.get('[type=submit]').should('be.exist').click();
+                cy.wait('@authorize');
+                cy.get('[data-test-id=main-page]').should('be.visible');
+            });
+            cy.viewport(1440, 900);
+        });
 
         // describe('profile avatar tests', () => {
         //     it('screenshots', () => {
@@ -5180,645 +5180,645 @@ describe('Sprint 2', () => {
         //     });
         // });
 
-    //     describe('avatar upload tests', () => {
-    //         it('upload success', () => {
-    //             getFullData();
-    //             cy.intercept('POST', /upload/, UPLOAD).as('upload');
-    //             cy.intercept('PUT', /users/, USER_AVATAR_CHANGED).as('user');
-    //             cy.visit('http://localhost:3000/#/profile');
-    //             cy.wait(['@books', '@me', '@categories']);
-    //             cy.get('[data-test-id=profile-avatar]').screenshot('18-profile-avatar-before');
-    //             cy.get('[data-test-id=profile-avatar]')
-    //                 .find('input[type=file]')
-    //                 .should('be.exist')
-    //                 .selectFile('cypress/fixtures/cypress.jpg', { force: true });
-    //             cy.wait(['@user', '@upload']);
-    //             cy.get('[data-test-id=error]')
-    //                 .should('be.visible')
-    //                 .contains('Фото успешно сохранено!', { matchCase: false });
-    //             cy.wait(10000);
-    //             cy.get('[data-test-id=profile-avatar]').screenshot('19-profile-avatar-after');
-    //         });
+        // describe('avatar upload tests', () => {
+        //     it('upload success', () => {
+        //         getFullData();
+        //         cy.intercept('POST', /upload/, UPLOAD).as('upload');
+        //         cy.intercept('PUT', /users/, USER_AVATAR_CHANGED).as('user');
+        //         cy.visit('http://localhost:3000/#/profile');
+        //         cy.wait(['@books', '@me', '@categories']);
+        //         cy.get('[data-test-id=profile-avatar]').screenshot('18-profile-avatar-before');
+        //         cy.get('[data-test-id=profile-avatar]')
+        //             .find('input[type=file]')
+        //             .should('be.exist')
+        //             .selectFile('cypress/fixtures/cypress.jpg', { force: true });
+        //         cy.wait(['@user', '@upload']);
+        //         cy.get('[data-test-id=error]')
+        //             .should('be.visible')
+        //             .contains('Фото успешно сохранено!', { matchCase: false });
+        //         cy.wait(10000);
+        //         cy.get('[data-test-id=profile-avatar]').screenshot('19-profile-avatar-after');
+        //     });
 
-    //         it('user fail', () => {
-    //             getFullData();
-    //             cy.intercept('POST', /upload/, UPLOAD).as('upload');
-    //             cy.intercept('PUT', /users/, { statusCode: 400 }).as('user');
-    //             cy.visit('http://localhost:3000/#/profile');
-    //             cy.wait(['@books', '@me', '@categories']);
-    //             cy.get('[type=file]')
-    //                 .should('be.exist')
-    //                 .selectFile('cypress/fixtures/cypress.jpg', { force: true });
-    //             cy.wait(['@user', '@upload']);
-    //             cy.get('[data-test-id=error]')
-    //                 .should('be.exist')
-    //                 .contains('Что-то пошло не так, фото не сохранилось. Попробуйте позже!', {
-    //                     matchCase: false,
-    //                 });
-    //         });
+        //     it('user fail', () => {
+        //         getFullData();
+        //         cy.intercept('POST', /upload/, UPLOAD).as('upload');
+        //         cy.intercept('PUT', /users/, { statusCode: 400 }).as('user');
+        //         cy.visit('http://localhost:3000/#/profile');
+        //         cy.wait(['@books', '@me', '@categories']);
+        //         cy.get('[type=file]')
+        //             .should('be.exist')
+        //             .selectFile('cypress/fixtures/cypress.jpg', { force: true });
+        //         cy.wait(['@user', '@upload']);
+        //         cy.get('[data-test-id=error]')
+        //             .should('be.exist')
+        //             .contains('Что-то пошло не так, фото не сохранилось. Попробуйте позже!', {
+        //                 matchCase: false,
+        //             });
+        //     });
 
-    //         it('upload fail', () => {
-    //             getFullData();
-    //             cy.intercept('POST', /upload/, { statusCode: 400 }).as('upload');
-    //             cy.visit('http://localhost:3000/#/profile');
-    //             cy.wait(['@books', '@me', '@categories']);
-    //             cy.get('[type=file]')
-    //                 .should('be.exist')
-    //                 .selectFile('cypress/fixtures/cypress.jpg', { force: true });
-    //             cy.wait('@upload');
-    //             cy.get('[data-test-id=error]')
-    //                 .should('be.exist')
-    //                 .contains('Что-то пошло не так, фото не сохранилось. Попробуйте позже!', {
-    //                     matchCase: false,
-    //                 });
-    //         });
-    //     });
+        //     it('upload fail', () => {
+        //         getFullData();
+        //         cy.intercept('POST', /upload/, { statusCode: 400 }).as('upload');
+        //         cy.visit('http://localhost:3000/#/profile');
+        //         cy.wait(['@books', '@me', '@categories']);
+        //         cy.get('[type=file]')
+        //             .should('be.exist')
+        //             .selectFile('cypress/fixtures/cypress.jpg', { force: true });
+        //         cy.wait('@upload');
+        //         cy.get('[data-test-id=error]')
+        //             .should('be.exist')
+        //             .contains('Что-то пошло не так, фото не сохранилось. Попробуйте позже!', {
+        //                 matchCase: false,
+        //             });
+        //     });
+        // });
 
-//         const formTest = (width, heigth) => {
-//             cy.viewport(width, heigth);
-//             cy.get('[data-test-id=profile-form] input[name=login]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=profile-form] input[name=firstName]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=profile-form] input[name=lastName]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=profile-form] input[name=password]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=profile-form] input[name=phone]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=profile-form] input[name=email]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=save-button]')
-//                 .should('be.visible')
-//                 .should('be.disabled')
-//                 .should('have.css', 'border-radius', '30px')
-//                 .should('have.css', 'background-color', 'rgb(235, 235, 235)')
-//                 .contains('Сохранить изменения', { matchCase: false })
-//                 .should('have.css', 'text-transform', 'uppercase');
+        const formTest = (width, heigth) => {
+            cy.viewport(width, heigth);
+            cy.get('[data-test-id=profile-form] input[name=login]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=profile-form] input[name=firstName]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=profile-form] input[name=lastName]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=profile-form] input[name=password]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=profile-form] input[name=phone]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=profile-form] input[name=email]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=save-button]')
+                .should('be.visible')
+                .should('be.disabled')
+                .should('have.css', 'border-radius', '30px')
+                .should('have.css', 'background-color', 'rgb(235, 235, 235)')
+                .contains('Сохранить изменения', { matchCase: false })
+                .should('have.css', 'text-transform', 'uppercase');
 
-//             cy.get('[data-test-id=edit-button]')
-//                 .should('be.visible')
-//                 .should('be.enabled')
-//                 .should('have.css', 'border', '1px solid rgb(191, 196, 201)')
-//                 .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
-//                 .contains('Редактировать', { matchCase: false })
-//                 .should('have.css', 'text-transform', 'uppercase')
-//                 .click();
+            cy.get('[data-test-id=edit-button]')
+                .should('be.visible')
+                .should('be.enabled')
+                .should('have.css', 'border', '1px solid rgb(191, 196, 201)')
+                .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
+                .contains('Редактировать', { matchCase: false })
+                .should('have.css', 'text-transform', 'uppercase')
+                .click();
 
-//             cy.get('[data-test-id=profile-form] input[name=login]')
-//                 .should('be.visible')
-//                 .should('be.enabled');
-//             cy.get('[data-test-id=profile-form] input[name=firstName]')
-//                 .should('be.visible')
-//                 .should('be.enabled');
-//             cy.get('[data-test-id=profile-form] input[name=lastName]')
-//                 .should('be.visible')
-//                 .should('be.enabled');
-//             cy.get('[data-test-id=profile-form] input[name=password]')
-//                 .should('be.visible')
-//                 .should('be.enabled');
-//             cy.get('[data-test-id=profile-form] input[name=phone]')
-//                 .should('be.visible')
-//                 .should('be.enabled');
-//             cy.get('[data-test-id=profile-form] input[name=email]')
-//                 .should('be.visible')
-//                 .should('be.enabled');
-//             cy.get('[data-test-id=save-button]')
-//                 .should('be.visible')
-//                 .should('be.enabled')
-//                 .should('have.css', 'border-radius', '30px')
-//                 .contains('Сохранить изменения', { matchCase: false })
-//                 .should('have.css', 'text-transform', 'uppercase');
+            cy.get('[data-test-id=profile-form] input[name=login]')
+                .should('be.visible')
+                .should('be.enabled');
+            cy.get('[data-test-id=profile-form] input[name=firstName]')
+                .should('be.visible')
+                .should('be.enabled');
+            cy.get('[data-test-id=profile-form] input[name=lastName]')
+                .should('be.visible')
+                .should('be.enabled');
+            cy.get('[data-test-id=profile-form] input[name=password]')
+                .should('be.visible')
+                .should('be.enabled');
+            cy.get('[data-test-id=profile-form] input[name=phone]')
+                .should('be.visible')
+                .should('be.enabled');
+            cy.get('[data-test-id=profile-form] input[name=email]')
+                .should('be.visible')
+                .should('be.enabled');
+            cy.get('[data-test-id=save-button]')
+                .should('be.visible')
+                .should('be.enabled')
+                .should('have.css', 'border-radius', '30px')
+                .contains('Сохранить изменения', { matchCase: false })
+                .should('have.css', 'text-transform', 'uppercase');
 
-//             cy.get('[data-test-id=edit-button]')
-//                 .should('be.visible')
-//                 .should('be.enabled')
-//                 .should('have.css', 'border', '1px solid rgb(191, 196, 201)')
-//                 .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
-//                 .contains('Редактировать')
-//                 .should('have.css', 'text-transform', 'uppercase')
-//                 .click();
+            cy.get('[data-test-id=edit-button]')
+                .should('be.visible')
+                .should('be.enabled')
+                .should('have.css', 'border', '1px solid rgb(191, 196, 201)')
+                .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
+                .contains('Редактировать')
+                .should('have.css', 'text-transform', 'uppercase')
+                .click();
 
-//             cy.get('[data-test-id=profile-form] input[name=login]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=profile-form] input[name=firstName]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=profile-form] input[name=lastName]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=profile-form] input[name=password]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=profile-form] input[name=phone]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=profile-form] input[name=email]')
-//                 .should('be.visible')
-//                 .should('be.disabled');
-//             cy.get('[data-test-id=save-button]')
-//                 .should('be.visible')
-//                 .should('be.disabled')
-//                 .should('have.css', 'border-radius', '30px')
-//                 .should('have.css', 'background-color', 'rgb(235, 235, 235)')
-//                 .contains('Сохранить изменения', { matchCase: false })
-//                 .should('have.css', 'text-transform', 'uppercase');
+            cy.get('[data-test-id=profile-form] input[name=login]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=profile-form] input[name=firstName]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=profile-form] input[name=lastName]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=profile-form] input[name=password]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=profile-form] input[name=phone]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=profile-form] input[name=email]')
+                .should('be.visible')
+                .should('be.disabled');
+            cy.get('[data-test-id=save-button]')
+                .should('be.visible')
+                .should('be.disabled')
+                .should('have.css', 'border-radius', '30px')
+                .should('have.css', 'background-color', 'rgb(235, 235, 235)')
+                .contains('Сохранить изменения', { matchCase: false })
+                .should('have.css', 'text-transform', 'uppercase');
 
-//             cy.get('[data-test-id=edit-button]')
-//                 .should('be.visible')
-//                 .should('be.enabled')
-//                 .should('have.css', 'border-radius', '30px')
-//                 .should('have.css', 'border', '1px solid rgb(191, 196, 201)')
-//                 .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
-//                 .contains('Редактировать')
-//                 .should('have.css', 'text-transform', 'uppercase', { matchCase: false })
-//                 .click();
+            cy.get('[data-test-id=edit-button]')
+                .should('be.visible')
+                .should('be.enabled')
+                .should('have.css', 'border-radius', '30px')
+                .should('have.css', 'border', '1px solid rgb(191, 196, 201)')
+                .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
+                .contains('Редактировать')
+                .should('have.css', 'text-transform', 'uppercase', { matchCase: false })
+                .click();
 
-//             cy.get('[data-test-id=profile-form] input[name=login]').clear().blur();
-//             cy.get('[data-test-id=hint]')
-//                 .eq(0)
-//                 .should('be.visible')
-//                 .contains('Поле не может быть пустым', { matchCase: false })
-//                 .should('have.css', 'color', 'rgb(244, 44, 79)')
-//                 .should('have.css', 'font-weight', '500')
-//                 .should('have.css', 'font-size', '12px')
-//                 .should('have.css', 'letter-spacing', '0.2px');
-//             cy.get('[data-test-id=profile-form] input[name=firstName]').clear().blur();
-//             cy.get('[data-test-id=profile-form] input[name=lastName]').clear().blur();
-//             cy.get('[data-test-id=profile-form] input[name=password]').clear().blur();
-//             cy.get('[data-test-id=hint]')
-//                 .should('be.visible')
-//                 .eq(1)
-//                 .should('be.visible')
-//                 .contains('Поле не может быть пустым', { matchCase: false })
-//                 .should('have.css', 'color', 'rgb(244, 44, 79)')
-//                 .should('have.css', 'font-weight', '500')
-//                 .should('have.css', 'font-size', '12px')
-//                 .should('have.css', 'letter-spacing', '0.2px');
-//             cy.get('[data-test-id=profile-form] input[name=phone]').clear().blur();
-//             cy.get('[data-test-id=profile-form] input[name=email]').clear().blur();
-//             cy.get('[data-test-id=hint]')
-//                 .should('be.visible')
-//                 .eq(5)
-//                 .should('be.visible')
-//                 .contains('Поле не может быть пустым', { matchCase: false })
-//                 .should('have.css', 'color', 'rgb(244, 44, 79)')
-//                 .should('have.css', 'font-weight', '500')
-//                 .should('have.css', 'font-size', '12px')
-//                 .should('have.css', 'letter-spacing', '0.2px');
-//             cy.get('[data-test-id=profile-form] input[name=login]')
-//                 .clear()
-//                 .type('Кириллица')
-//                 .blur();
-//             cy.get('[data-test-id=hint]')
-//                 .should('be.visible')
-//                 .eq(0)
-//                 .should('be.visible')
-//                 .contains('Используйте для логина латинский алфавит и цифры', { matchCase: false })
-//                 .should('have.css', 'color', 'rgb(244, 44, 79)')
-//                 .should('have.css', 'font-weight', '500')
-//                 .should('have.css', 'font-size', '12px')
-//                 .should('have.css', 'letter-spacing', '0.2px');
-//             cy.get('[data-test-id=profile-form] input[name=password]')
-//                 .clear()
-//                 .type('не правильный пароль', { matchCase: false })
-//                 .blur();
-//             cy.get('[data-test-id=hint]')
-//                 .should('be.visible')
-//                 .eq(1)
-//                 .should('be.visible')
-//                 .contains('Пароль не менее 8 символов, с заглавной буквой и цифрой', {
-//                     matchCase: false,
-//                 })
-//                 .should('have.css', 'font-weight', '500')
-//                 .should('have.css', 'font-size', '12px')
-//                 .should('have.css', 'letter-spacing', '0.2px')
-//                 .should('have.css', 'color', 'rgb(244, 44, 79)');
-//             cy.get('[data-test-id=profile-form] input[name=phone]').clear().type('+').blur();
-//             cy.get('[data-test-id=profile-form] input[name=phone]').should('have.value', '+375 (xx) xxx-xx-xx');
-//             cy.get('[data-test-id=profile-form] input[name=phone]').clear().type('+335353').blur();
-//             cy.get('[data-test-id=profile-form] input[name=phone]').should('have.value', '+375 (33) 535-3x-xx');
-//             cy.get('[data-test-id=hint]')
-//                 .should('be.visible')
-//                 .eq(4)
-//                 .should('be.visible')
-//                 .contains('В формате +375 (xx) xxx-xx-xx', { matchCase: false })
-//                 .should('have.css', 'font-weight', '500')
-//                 .should('have.css', 'font-size', '12px')
-//                 .should('have.css', 'letter-spacing', '0.2px')
-//                 .should('have.css', 'color', 'rgb(244, 44, 79)');
-//             cy.get('[data-test-id=profile-form] input[name=email]')
-//                 .clear()
-//                 .type('incorrectmail.ru')
-//                 .blur();
-//             cy.get('[data-test-id=hint]')
-//                 .should('be.visible')
-//                 .eq(5)
-//                 .should('be.visible')
-//                 .contains('Введите корректный e-mail', { matchCase: false })
-//                 .should('have.css', 'font-weight', '500')
-//                 .should('have.css', 'font-size', '12px')
-//                 .should('have.css', 'letter-spacing', '0.2px')
-//                 .should('have.css', 'color', 'rgb(244, 44, 79)');
+            cy.get('[data-test-id=profile-form] input[name=login]').clear().blur();
+            cy.get('[data-test-id=hint]')
+                .eq(0)
+                .should('be.visible')
+                .contains('Поле не может быть пустым', { matchCase: false })
+                .should('have.css', 'color', 'rgb(244, 44, 79)')
+                .should('have.css', 'font-weight', '500')
+                .should('have.css', 'font-size', '12px')
+                .should('have.css', 'letter-spacing', '0.2px');
+            cy.get('[data-test-id=profile-form] input[name=firstName]').clear().blur();
+            cy.get('[data-test-id=profile-form] input[name=lastName]').clear().blur();
+            cy.get('[data-test-id=profile-form] input[name=password]').clear().blur();
+            cy.get('[data-test-id=hint]')
+                .should('be.visible')
+                .eq(1)
+                .should('be.visible')
+                .contains('Поле не может быть пустым', { matchCase: false })
+                .should('have.css', 'color', 'rgb(244, 44, 79)')
+                .should('have.css', 'font-weight', '500')
+                .should('have.css', 'font-size', '12px')
+                .should('have.css', 'letter-spacing', '0.2px');
+            cy.get('[data-test-id=profile-form] input[name=phone]').clear().blur();
+            cy.get('[data-test-id=profile-form] input[name=email]').clear().blur();
+            cy.get('[data-test-id=hint]')
+                .should('be.visible')
+                .eq(5)
+                .should('be.visible')
+                .contains('Поле не может быть пустым', { matchCase: false })
+                .should('have.css', 'color', 'rgb(244, 44, 79)')
+                .should('have.css', 'font-weight', '500')
+                .should('have.css', 'font-size', '12px')
+                .should('have.css', 'letter-spacing', '0.2px');
+            cy.get('[data-test-id=profile-form] input[name=login]')
+                .clear()
+                .type('Кириллица')
+                .blur();
+            cy.get('[data-test-id=hint]')
+                .should('be.visible')
+                .eq(0)
+                .should('be.visible')
+                .contains('Используйте для логина латинский алфавит и цифры', { matchCase: false })
+                .should('have.css', 'color', 'rgb(244, 44, 79)')
+                .should('have.css', 'font-weight', '500')
+                .should('have.css', 'font-size', '12px')
+                .should('have.css', 'letter-spacing', '0.2px');
+            cy.get('[data-test-id=profile-form] input[name=password]')
+                .clear()
+                .type('не правильный пароль', { matchCase: false })
+                .blur();
+            cy.get('[data-test-id=hint]')
+                .should('be.visible')
+                .eq(1)
+                .should('be.visible')
+                .contains('Пароль не менее 8 символов, с заглавной буквой и цифрой', {
+                    matchCase: false,
+                })
+                .should('have.css', 'font-weight', '500')
+                .should('have.css', 'font-size', '12px')
+                .should('have.css', 'letter-spacing', '0.2px')
+                .should('have.css', 'color', 'rgb(244, 44, 79)');
+            cy.get('[data-test-id=profile-form] input[name=phone]').clear().type('+').blur();
+            cy.get('[data-test-id=profile-form] input[name=phone]').should('have.value', '+375 (xx) xxx-xx-xx');
+            cy.get('[data-test-id=profile-form] input[name=phone]').clear().type('+335353').blur();
+            cy.get('[data-test-id=profile-form] input[name=phone]').should('have.value', '+375 (33) 535-3x-xx');
+            cy.get('[data-test-id=hint]')
+                .should('be.visible')
+                .eq(4)
+                .should('be.visible')
+                .contains('В формате +375 (xx) xxx-xx-xx', { matchCase: false })
+                .should('have.css', 'font-weight', '500')
+                .should('have.css', 'font-size', '12px')
+                .should('have.css', 'letter-spacing', '0.2px')
+                .should('have.css', 'color', 'rgb(244, 44, 79)');
+            cy.get('[data-test-id=profile-form] input[name=email]')
+                .clear()
+                .type('incorrectmail.ru')
+                .blur();
+            cy.get('[data-test-id=hint]')
+                .should('be.visible')
+                .eq(5)
+                .should('be.visible')
+                .contains('Введите корректный e-mail', { matchCase: false })
+                .should('have.css', 'font-weight', '500')
+                .should('have.css', 'font-size', '12px')
+                .should('have.css', 'letter-spacing', '0.2px')
+                .should('have.css', 'color', 'rgb(244, 44, 79)');
 
-//             cy.get('[data-test-id=profile-form] input[name=login]')
-//                 .clear()
-//                 .type('ValidateName123')
-//                 .blur();
-//             cy.get('[data-test-id=profile-form] input[name=firstName]').clear().type('Igor').blur();
-//             cy.get('[data-test-id=profile-form] input[name=lastName]')
-//                 .clear()
-//                 .type('Shidlovsky')
-//                 .blur();
-//             cy.get('[data-test-id=profile-form] input[name=password]')
-//                 .clear()
-//                 .type('ValidatePassword123')
-//                 .blur();
-//             cy.get('[data-test-id=profile-form] input[name=phone]')
-//                 .clear()
-//                 .type('+335353535')
-//                 .blur();
-//             cy.get('[data-test-id=profile-form] input[name=email]')
-//                 .clear()
-//                 .type('validate@mail.ru')
-//                 .blur();
-//         };
+            cy.get('[data-test-id=profile-form] input[name=login]')
+                .clear()
+                .type('ValidateName123')
+                .blur();
+            cy.get('[data-test-id=profile-form] input[name=firstName]').clear().type('Igor').blur();
+            cy.get('[data-test-id=profile-form] input[name=lastName]')
+                .clear()
+                .type('Shidlovsky')
+                .blur();
+            cy.get('[data-test-id=profile-form] input[name=password]')
+                .clear()
+                .type('ValidatePassword123')
+                .blur();
+            cy.get('[data-test-id=profile-form] input[name=phone]')
+                .clear()
+                .type('+335353535')
+                .blur();
+            cy.get('[data-test-id=profile-form] input[name=email]')
+                .clear()
+                .type('validate@mail.ru')
+                .blur();
+        };
 
-//         const formTestWorker = () => {
-//             cy.get('[data-test-id=edit-button]').should('be.visible').should('be.enabled').click();
+        const formTestWorker = () => {
+            cy.get('[data-test-id=edit-button]').should('be.visible').should('be.enabled').click();
 
-//             cy.get('[data-test-id=profile-form] input[name=login]').clear().type(login).blur();
-//             cy.get('[data-test-id=profile-form] input[name=firstName]')
-//                 .clear()
-//                 .type('Sprint7TestUserName')
-//                 .blur();
-//             cy.get('[data-test-id=profile-form] input[name=lastName]')
-//                 .clear()
-//                 .type('Sprint7TestUserLastName')
-//                 .blur();
-//             cy.get('[data-test-id=profile-form] input[name=password]').clear().type(pass).blur();
-//             cy.get('[data-test-id=profile-form] input[name=phone]')
-//                 .clear()
-//                 .type('+335353535')
-//                 .blur();
-//             cy.get('[data-test-id=profile-form] input[name=email]')
-//                 .clear()
-//                 .type('correct@gmail.com')
-//                 .blur();
+            cy.get('[data-test-id=profile-form] input[name=login]').clear().type(login).blur();
+            cy.get('[data-test-id=profile-form] input[name=firstName]')
+                .clear()
+                .type('Sprint7TestUserName')
+                .blur();
+            cy.get('[data-test-id=profile-form] input[name=lastName]')
+                .clear()
+                .type('Sprint7TestUserLastName')
+                .blur();
+            cy.get('[data-test-id=profile-form] input[name=password]').clear().type(pass).blur();
+            cy.get('[data-test-id=profile-form] input[name=phone]')
+                .clear()
+                .type('+335353535')
+                .blur();
+            cy.get('[data-test-id=profile-form] input[name=email]')
+                .clear()
+                .type('correct@gmail.com')
+                .blur();
 
-//             cy.get('[data-test-id=save-button]').should('be.visible').should('be.enabled').click();
-//         };
+            cy.get('[data-test-id=save-button]').should('be.visible').should('be.enabled').click();
+        };
 
-//         const formSendData = (isSuccess) => {
-//             if (isSuccess) {
-//                 cy.intercept(/users/, { statusCode: 200 }).as('user');
-//                 getFullData();
-//                 cy.visit('http://localhost:3000/#/profile');
-//                 cy.wait(['@books', '@me', '@categories']);
+        const formSendData = (isSuccess) => {
+            if (isSuccess) {
+                cy.intercept(/users/, { statusCode: 200 }).as('user');
+                getFullData();
+                cy.visit('http://localhost:3000/#/profile');
+                cy.wait(['@books', '@me', '@categories']);
 
-//                 formTestWorker();
+                formTestWorker();
 
-//                 cy.wait('@user');
-//                 cy.get('[data-test-id=error]')
-//                     .should('be.visible')
-//                     .contains('Изменения успешно сохранены!', { matchCase: false });
-//             } else {
-//                 cy.intercept('PUT', /users/, { statusCode: 400 }).as('userFail');
-//                 getFullData();
-//                 cy.visit('http://localhost:3000/#/profile');
-//                 cy.wait(['@books', '@me', '@categories']);
+                cy.wait('@user');
+                cy.get('[data-test-id=error]')
+                    .should('be.visible')
+                    .contains('Изменения успешно сохранены!', { matchCase: false });
+            } else {
+                cy.intercept('PUT', /users/, { statusCode: 400 }).as('userFail');
+                getFullData();
+                cy.visit('http://localhost:3000/#/profile');
+                cy.wait(['@books', '@me', '@categories']);
 
-//                 formTestWorker();
+                formTestWorker();
 
-//                 cy.wait('@userFail');
-//                 cy.get('[data-test-id=error]')
-//                     .should('be.visible')
-//                     .contains('Изменения не были сохранены. Попробуйте позже!');
-//             }
-//         };
+                cy.wait('@userFail');
+                cy.get('[data-test-id=error]')
+                    .should('be.visible')
+                    .contains('Изменения не были сохранены. Попробуйте позже!');
+            }
+        };
 
-//         describe('profile form tests', () => {
-//             beforeEach(() => {
-//                 getFullData();
-//                 cy.visit('http://localhost:3000/#/profile');
-//                 cy.wait(['@books', '@categories', '@me']);
-//             });
-//             it('1440, 900', () => formTest(1440, 900));
-//             it('768, 576', () => formTest(768, 576));
-//             it('320, 240', () => formTest(320, 240));
-//         });
+        // describe('profile form tests', () => {
+        //     beforeEach(() => {
+        //         getFullData();
+        //         cy.visit('http://localhost:3000/#/profile');
+        //         cy.wait(['@books', '@categories', '@me']);
+        //     });
+        //     it('1440, 900', () => formTest(1440, 900));
+        //     it('768, 576', () => formTest(768, 576));
+        //     it('320, 240', () => formTest(320, 240));
+        // });
 
-//         describe('profile form send tests', () => {
-//             it('send test success', () => formSendData(true));
-//             it('send test fail', () => formSendData(false));
-//         });
+        // describe('profile form send tests', () => {
+        //     it('send test success', () => formSendData(true));
+        //     it('send test fail', () => formSendData(false));
+        // });
 
-//     //     describe('empty-cards', () => {
-//     //         it('empty-booking', () => {
-//     //             getContent();
-//     //             cy.intercept('GET', /me/, USER_NO_BOOKING).as('me');
-//     //             cy.visit('http://localhost:3000/#/profile');
-//     //             cy.wait(['@books', '@me', '@categories']);
-//     //             cy.wait(5000);
-//     //             cy.get('[data-test-id=empty-blue-card]')
-//     //                 .should('be.visible')
-//     //                 .screenshot('20-1440-profile-empty-card')
-//     //                 .contains('Забронируйте книгу и она отобразится', { matchCase: false });
-//     //             cy.get('[data-test-id=empty-blue-card]')
-//     //                 .should('have.css', 'background-color')
-//     //                 .and('eq', 'rgb(110, 118, 241)');
-//     //         });
-//     //         it('empty-handed', () => {
-//     //             getContent();
-//     //             cy.intercept('GET', /me/, USER_NO_DELIVERY).as('me');
-//     //             cy.visit('http://localhost:3000/#/profile');
-//     //             cy.wait(['@books', '@me', '@categories']);
-//     //             cy.wait(5000);
-//     //             cy.get('[data-test-id=empty-blue-card]')
-//     //                 .should('be.visible')
-//     //                 .screenshot('21-1440-profile-empty-card')
-//     //                 .contains('Прочитав книгу, она отобразится в истории', { matchCase: false });
-//     //             cy.get('[data-test-id=empty-blue-card]')
-//     //                 .should('have.css', 'background-color')
-//     //                 .and('eq', 'rgb(110, 118, 241)');
-//     //         });
-//     //         it('empty-history', () => {
-//     //             getContent();
-//     //             cy.intercept('GET', /me/, USER_NO_HISTORY).as('me');
-//     //             cy.visit('http://localhost:3000/#/profile');
-//     //             cy.wait(['@books', '@me', '@categories']);
-//     //             cy.wait(5000);
-//     //             cy.get('[data-test-id=empty-blue-card]')
-//     //                 .should('be.visible')
-//     //                 .screenshot('22-1440-profile-empty-card')
-//     //                 .contains('Вы не читали книг из нашей библиотеки', { matchCase: false });
-//     //             cy.get('[data-test-id=empty-blue-card]')
-//     //                 .should('have.css', 'background-color')
-//     //                 .and('eq', 'rgb(110, 118, 241)');
-//     //         });
-//     //     });
+        describe('empty-cards', () => {
+            it('empty-booking', () => {
+                getContent();
+                cy.intercept('GET', /me/, USER_NO_BOOKING).as('me');
+                cy.visit('http://localhost:3000/#/profile');
+                cy.wait(['@books', '@me', '@categories']);
+                cy.wait(5000);
+                cy.get('[data-test-id=empty-blue-card]')
+                    .should('be.visible')
+                    .screenshot('20-1440-profile-empty-card')
+                    .contains('Забронируйте книгу и она отобразится', { matchCase: false });
+                cy.get('[data-test-id=empty-blue-card]')
+                    .should('have.css', 'background-color')
+                    .and('eq', 'rgb(110, 118, 241)');
+            });
+            it('empty-handed', () => {
+                getContent();
+                cy.intercept('GET', /me/, USER_NO_DELIVERY).as('me');
+                cy.visit('http://localhost:3000/#/profile');
+                cy.wait(['@books', '@me', '@categories']);
+                cy.wait(5000);
+                cy.get('[data-test-id=empty-blue-card]')
+                    .should('be.visible')
+                    .screenshot('21-1440-profile-empty-card')
+                    .contains('Прочитав книгу, она отобразится в истории', { matchCase: false });
+                cy.get('[data-test-id=empty-blue-card]')
+                    .should('have.css', 'background-color')
+                    .and('eq', 'rgb(110, 118, 241)');
+            });
+            it('empty-history', () => {
+                getContent();
+                cy.intercept('GET', /me/, USER_NO_HISTORY).as('me');
+                cy.visit('http://localhost:3000/#/profile');
+                cy.wait(['@books', '@me', '@categories']);
+                cy.wait(5000);
+                cy.get('[data-test-id=empty-blue-card]')
+                    .should('be.visible')
+                    .screenshot('22-1440-profile-empty-card')
+                    .contains('Вы не читали книг из нашей библиотеки', { matchCase: false });
+                cy.get('[data-test-id=empty-blue-card]')
+                    .should('have.css', 'background-color')
+                    .and('eq', 'rgb(110, 118, 241)');
+            });
+        });
 
-//     //     describe('expired', () => {
-//     //         it('expired-booking', () => {
-//     //             getContent();
-//     //             cy.intercept('GET', /me/, USER_EXPIRED_BOOKING).as('me');
-//     //             cy.visit('http://localhost:3000/#/profile');
-//     //             cy.wait(['@books', '@me', '@categories']);
-//     //             cy.get('[data-test-id=expired]')
-//     //                 .should('be.visible')
-//     //                 .screenshot('23-1440-profile-expider-card')
-//     //                 .contains('Дата бронирования книги истекла', { matchCase: false });
-//     //             cy.get('[data-test-id=expired]')
-//     //                 .should('be.visible')
-//     //                 .contains('Через 24 часа книга будет доступна всем', { matchCase: false });
-//     //             cy.get('[data-test-id=expired]')
-//     //                 .should('have.css', 'background-color')
-//     //                 .and('eq', 'rgba(255, 82, 83, 0.7)');
-//     //         });
-//     //         it('expired-handed', () => {
-//     //             getContent();
-//     //             cy.intercept('GET', /me/, USER_EXPIRED_HANDED).as('me');
-//     //             cy.visit('http://localhost:3000/#/profile');
-//     //             cy.wait(['@books', '@me', '@categories']);
-//     //             cy.get('[data-test-id=expired]')
-//     //                 .should('be.visible')
-//     //                 .screenshot('24-1440-profile-empty-card')
-//     //                 .contains('Вышел срок пользования книги', { matchCase: false });
-//     //             cy.get('[data-test-id=expired]')
-//     //                 .should('be.visible')
-//     //                 .contains('Верните книгу, пожалуйста', { matchCase: false });
-//     //             cy.get('[data-test-id=expired]')
-//     //                 .should('have.css', 'background-color')
-//     //                 .and('eq', 'rgba(255, 82, 83, 0.7)');
-//     //         });
-//     //     });
+        //     describe('expired', () => {
+        //         it('expired-booking', () => {
+        //             getContent();
+        //             cy.intercept('GET', /me/, USER_EXPIRED_BOOKING).as('me');
+        //             cy.visit('http://localhost:3000/#/profile');
+        //             cy.wait(['@books', '@me', '@categories']);
+        //             cy.get('[data-test-id=expired]')
+        //                 .should('be.visible')
+        //                 .screenshot('23-1440-profile-expider-card')
+        //                 .contains('Дата бронирования книги истекла', { matchCase: false });
+        //             cy.get('[data-test-id=expired]')
+        //                 .should('be.visible')
+        //                 .contains('Через 24 часа книга будет доступна всем', { matchCase: false });
+        //             cy.get('[data-test-id=expired]')
+        //                 .should('have.css', 'background-color')
+        //                 .and('eq', 'rgba(255, 82, 83, 0.7)');
+        //         });
+        //         it('expired-handed', () => {
+        //             getContent();
+        //             cy.intercept('GET', /me/, USER_EXPIRED_HANDED).as('me');
+        //             cy.visit('http://localhost:3000/#/profile');
+        //             cy.wait(['@books', '@me', '@categories']);
+        //             cy.get('[data-test-id=expired]')
+        //                 .should('be.visible')
+        //                 .screenshot('24-1440-profile-empty-card')
+        //                 .contains('Вышел срок пользования книги', { matchCase: false });
+        //             cy.get('[data-test-id=expired]')
+        //                 .should('be.visible')
+        //                 .contains('Верните книгу, пожалуйста', { matchCase: false });
+        //             cy.get('[data-test-id=expired]')
+        //                 .should('have.css', 'background-color')
+        //                 .and('eq', 'rgba(255, 82, 83, 0.7)');
+        //         });
+        //     });
 
-//     //     describe('cancel-booking', () => {
-//     //         it('success', () => {
-//     //             cy.intercept('GET', /books/, BOOKS).as('books');
-//     //             cy.intercept('GET', /me/, USER_FULL_DATA).as('me');
-//     //             cy.intercept('DELETE', /bookings/, { statusCode: 200 }).as('bookings');
-//     //             cy.visit('http://localhost:3000/#/profile');
-//     //             cy.wait(['@books', '@me']);
-//     //             cy.get('[data-test-id=card]').eq(0).should('be.visible');
-//     //             cy.get('[data-test-id=cancel-booking-button]')
-//     //                 .should('be.visible')
-//     //                 .click({ force: true });
-//     //             cy.wait('@bookings');
-//     //             cy.get('[data-test-id=error]')
-//     //                 .should('be.visible')
-//     //                 .contains('Бронирование книги успешно отменено!', { matchCase: false });
-//     //         });
-//     //         it('fail', () => {
-//     //             cy.intercept('GET', /books/, BOOKS).as('books');
-//     //             cy.intercept('GET', /me/, USER_FULL_DATA).as('me');
-//     //             cy.intercept('DELETE', /bookings/, { statusCode: 400 }).as('bookings');
-//     //             cy.visit('http://localhost:3000/#/profile');
-//     //             cy.wait(['@books', '@me']);
-//     //             cy.get('[data-test-id=card]').eq(0).should('be.visible');
-//     //             cy.get('[data-test-id=cancel-booking-button]')
-//     //                 .should('be.visible')
-//     //                 .click({ force: true });
-//     //             cy.wait('@bookings');
-//     //             cy.get('[data-test-id=error]')
-//     //                 .should('be.visible')
-//     //                 .contains('Не удалось снять бронирование книги. Попробуйте позже!');
-//     //         });
-//     //     });
+        //     describe('cancel-booking', () => {
+        //         it('success', () => {
+        //             cy.intercept('GET', /books/, BOOKS).as('books');
+        //             cy.intercept('GET', /me/, USER_FULL_DATA).as('me');
+        //             cy.intercept('DELETE', /bookings/, { statusCode: 200 }).as('bookings');
+        //             cy.visit('http://localhost:3000/#/profile');
+        //             cy.wait(['@books', '@me']);
+        //             cy.get('[data-test-id=card]').eq(0).should('be.visible');
+        //             cy.get('[data-test-id=cancel-booking-button]')
+        //                 .should('be.visible')
+        //                 .click({ force: true });
+        //             cy.wait('@bookings');
+        //             cy.get('[data-test-id=error]')
+        //                 .should('be.visible')
+        //                 .contains('Бронирование книги успешно отменено!', { matchCase: false });
+        //         });
+        //         it('fail', () => {
+        //             cy.intercept('GET', /books/, BOOKS).as('books');
+        //             cy.intercept('GET', /me/, USER_FULL_DATA).as('me');
+        //             cy.intercept('DELETE', /bookings/, { statusCode: 400 }).as('bookings');
+        //             cy.visit('http://localhost:3000/#/profile');
+        //             cy.wait(['@books', '@me']);
+        //             cy.get('[data-test-id=card]').eq(0).should('be.visible');
+        //             cy.get('[data-test-id=cancel-booking-button]')
+        //                 .should('be.visible')
+        //                 .click({ force: true });
+        //             cy.wait('@bookings');
+        //             cy.get('[data-test-id=error]')
+        //                 .should('be.visible')
+        //                 .contains('Не удалось снять бронирование книги. Попробуйте позже!');
+        //         });
+        //     });
 
-//     //     describe('delivery-book-test', () => {
-//     //         it('has-back-date', () => {
-//     //             cy.intercept('GET', /books/, BOOKS).as('books');
-//     //             cy.intercept('GET', /me/, USER_FULL_DATA).as('me');
-//     //             cy.visit('http://localhost:3000/#/profile');
-//     //             cy.wait(['@books', '@me']);
-//     //             cy.get('[data-test-id=card]')
-//     //                 .eq(1)
-//     //                 .should('be.visible')
-//     //                 .contains('Возврат 30.03', { matchCase: false })
-//     //                 .should('have.css', 'color', 'rgb(255, 82, 83)');
-//     //         });
-//     //     });
+        //     describe('delivery-book-test', () => {
+        //         it('has-back-date', () => {
+        //             cy.intercept('GET', /books/, BOOKS).as('books');
+        //             cy.intercept('GET', /me/, USER_FULL_DATA).as('me');
+        //             cy.visit('http://localhost:3000/#/profile');
+        //             cy.wait(['@books', '@me']);
+        //             cy.get('[data-test-id=card]')
+        //                 .eq(1)
+        //                 .should('be.visible')
+        //                 .contains('Возврат 30.03', { matchCase: false })
+        //                 .should('have.css', 'color', 'rgb(255, 82, 83)');
+        //         });
+        //     });
 
-//     //     describe('history-tests', () => {
-//     //         describe('exist-and-visible', () => {
-//     //             it('test', () => {
-//     //                 getFullData();
-//     //                 cy.visit('http://localhost:3000/#/profile');
-//     //                 cy.wait(['@books', '@me', '@categories']);
-//     //                 cy.get('[data-test-id=history]')
-//     //                     .should('be.visible')
-//     //                     .contains('История')
-//     //                     .should('have.css', 'font-weight', '700')
-//     //                     .should('have.css', 'font-size', '24px')
-//     //                     .should('have.css', 'color', 'rgb(54, 54, 54)');
-//     //                 cy.get('[data-test-id=history]')
-//     //                     .contains('Список прочитанных книг', { matchCase: false })
-//     //                     .should('have.css', 'font-weight', '400')
-//     //                     .should('have.css', 'font-size', '16px')
-//     //                     .should('have.css', 'color', 'rgb(167, 167, 167)');
-//     //                 cy.get('[data-test-id=card]').should('be.visible');
-//     //                 cy.wait(5000);
-//     //                 cy.get('[data-test-id=history]').screenshot('25-1440-history', {
-//     //                     clip: { x: 0, y: 0, width: 1440, height: 600 },
-//     //                 });
-//     //             });
-//     //         });
-//     //         const addReview = (isSuccess) => {
-//     //             getFullData();
-//     //             cy.intercept('GET', 'https://strapi.cleverland.by/api/books/**', BOOK_34).as(
-//     //                 'book',
-//     //             );
-//     //             cy.intercept('POST', /comments/, { statusCode: isSuccess ? 200 : 400 }).as(
-//     //                 'comment',
-//     //             );
-//     //             cy.visit('http://localhost:3000/#/profile');
-//     //             cy.wait(['@books', '@me', '@categories']);
-//     //             cy.get('[data-test-id=history-slide]')
-//     //                 .eq(0)
-//     //                 .find('[data-test-id=history-review-button]')
-//     //                 .contains('Оставить отзыв', { matchCase: false })
-//     //                 .click();
-//     //             cy.wait('@book');
-//     //             cy.get('[data-test-id=modal-rate-book]')
-//     //                 .should('be.visible')
-//     //                 .find('[data-test-id=rating]')
-//     //                 .should('be.visible')
-//     //                 .find('[data-test-id=star]')
-//     //                 .eq(1)
-//     //                 .should('be.visible')
-//     //                 .click();
-//     //             cy.get('[data-test-id=modal-rate-book]')
-//     //                 .find('[data-test-id=comment]')
-//     //                 .should('be.visible')
-//     //                 .type('profile page test text');
-//     //             cy.get('[data-test-id=modal-rate-book]')
-//     //                 .find('[data-test-id=button-comment]')
-//     //                 .should('be.visible')
-//     //                 .should('be.enabled')
-//     //                 .click();
-//     //             cy.wait('@comment');
-//     //             if (isSuccess) {
-//     //                 cy.get('[data-test-id=error]')
-//     //                     .should('be.visible')
-//     //                     .contains('Спасибо, что нашли время оценить книгу!', { matchCase: false });
-//     //             } else {
-//     //                 cy.get('[data-test-id=error]')
-//     //                     .should('be.visible')
-//     //                     .contains('Оценка не была отправлена. Попробуйте позже!', {
-//     //                         matchCase: false,
-//     //                     });
-//     //             }
-//     //         };
+        //     describe('history-tests', () => {
+        //         describe('exist-and-visible', () => {
+        //             it('test', () => {
+        //                 getFullData();
+        //                 cy.visit('http://localhost:3000/#/profile');
+        //                 cy.wait(['@books', '@me', '@categories']);
+        //                 cy.get('[data-test-id=history]')
+        //                     .should('be.visible')
+        //                     .contains('История')
+        //                     .should('have.css', 'font-weight', '700')
+        //                     .should('have.css', 'font-size', '24px')
+        //                     .should('have.css', 'color', 'rgb(54, 54, 54)');
+        //                 cy.get('[data-test-id=history]')
+        //                     .contains('Список прочитанных книг', { matchCase: false })
+        //                     .should('have.css', 'font-weight', '400')
+        //                     .should('have.css', 'font-size', '16px')
+        //                     .should('have.css', 'color', 'rgb(167, 167, 167)');
+        //                 cy.get('[data-test-id=card]').should('be.visible');
+        //                 cy.wait(5000);
+        //                 cy.get('[data-test-id=history]').screenshot('25-1440-history', {
+        //                     clip: { x: 0, y: 0, width: 1440, height: 600 },
+        //                 });
+        //             });
+        //         });
+        //         const addReview = (isSuccess) => {
+        //             getFullData();
+        //             cy.intercept('GET', 'https://strapi.cleverland.by/api/books/**', BOOK_34).as(
+        //                 'book',
+        //             );
+        //             cy.intercept('POST', /comments/, { statusCode: isSuccess ? 200 : 400 }).as(
+        //                 'comment',
+        //             );
+        //             cy.visit('http://localhost:3000/#/profile');
+        //             cy.wait(['@books', '@me', '@categories']);
+        //             cy.get('[data-test-id=history-slide]')
+        //                 .eq(0)
+        //                 .find('[data-test-id=history-review-button]')
+        //                 .contains('Оставить отзыв', { matchCase: false })
+        //                 .click();
+        //             cy.wait('@book');
+        //             cy.get('[data-test-id=modal-rate-book]')
+        //                 .should('be.visible')
+        //                 .find('[data-test-id=rating]')
+        //                 .should('be.visible')
+        //                 .find('[data-test-id=star]')
+        //                 .eq(1)
+        //                 .should('be.visible')
+        //                 .click();
+        //             cy.get('[data-test-id=modal-rate-book]')
+        //                 .find('[data-test-id=comment]')
+        //                 .should('be.visible')
+        //                 .type('profile page test text');
+        //             cy.get('[data-test-id=modal-rate-book]')
+        //                 .find('[data-test-id=button-comment]')
+        //                 .should('be.visible')
+        //                 .should('be.enabled')
+        //                 .click();
+        //             cy.wait('@comment');
+        //             if (isSuccess) {
+        //                 cy.get('[data-test-id=error]')
+        //                     .should('be.visible')
+        //                     .contains('Спасибо, что нашли время оценить книгу!', { matchCase: false });
+        //             } else {
+        //                 cy.get('[data-test-id=error]')
+        //                     .should('be.visible')
+        //                     .contains('Оценка не была отправлена. Попробуйте позже!', {
+        //                         matchCase: false,
+        //                     });
+        //             }
+        //         };
 
-//     //         describe('add-review', () => {
-//     //             it('success', () => addReview(true));
-//     //             it('fail', () => addReview(false));
-//     //         });
+        //         describe('add-review', () => {
+        //             it('success', () => addReview(true));
+        //             it('fail', () => addReview(false));
+        //         });
 
-//     //         const updateReview = (isSuccess) => {
-//     //             getFullData();
-//     //             cy.intercept('GET', 'https://strapi.cleverland.by/api/books/**', {
-//     //                 statusCode: 200,
-//     //                 body: BOOK_94,
-//     //             }).as('book');
-//     //             cy.intercept('PUT', /comments/, { statusCode: isSuccess ? 200 : 400 }).as(
-//     //                 'comment',
-//     //             );
-//     //             cy.visit('http://localhost:3000/#/profile');
-//     //             cy.wait(['@books', '@me','@categories']);
-//     //             cy.get('[data-test-id=history-slide]')
-//     //                 .eq(2)
-//     //                 .find('[data-test-id=history-review-button]')
-//     //                 .contains('Изменить оценку', { matchCase: false })
-//     //                 .click();
-//     //             cy.wait('@book');
-//     //             cy.get('[data-test-id=modal-rate-book]')
-//     //                 .should('be.visible')
-//     //                 .find('[data-test-id=rating]')
-//     //                 .should('be.visible')
-//     //                 .find('[data-test-id=star]')
-//     //                 .eq(0)
-//     //                 .should('be.visible')
-//     //                 .click();
-//     //             cy.get('[data-test-id=modal-rate-book]')
-//     //                 .find('[data-test-id=comment]')
-//     //                 .should('be.visible')
-//     //                 .type('profile page test text');
-//     //             cy.get('[data-test-id=modal-rate-book]')
-//     //                 .find('[data-test-id=button-comment]')
-//     //                 .should('be.visible')
-//     //                 .should('be.enabled')
-//     //                 .click();
-//     //             cy.wait('@comment');
-//     //             if (isSuccess) {
-//     //                 cy.get('[data-test-id=error]')
-//     //                     .should('be.visible')
-//     //                     .contains('Спасибо, что нашли время изменить оценку!', {
-//     //                         matchCase: false,
-//     //                     });
-//     //             } else {
-//     //                 cy.get('[data-test-id=error]')
-//     //                     .should('be.visible')
-//     //                     .contains('Изменения не были сохранены. Попробуйте позже!', {
-//     //                         matchCase: false,
-//     //                     });
-//     //             }
-//     //         };
+        //         const updateReview = (isSuccess) => {
+        //             getFullData();
+        //             cy.intercept('GET', 'https://strapi.cleverland.by/api/books/**', {
+        //                 statusCode: 200,
+        //                 body: BOOK_94,
+        //             }).as('book');
+        //             cy.intercept('PUT', /comments/, { statusCode: isSuccess ? 200 : 400 }).as(
+        //                 'comment',
+        //             );
+        //             cy.visit('http://localhost:3000/#/profile');
+        //             cy.wait(['@books', '@me','@categories']);
+        //             cy.get('[data-test-id=history-slide]')
+        //                 .eq(2)
+        //                 .find('[data-test-id=history-review-button]')
+        //                 .contains('Изменить оценку', { matchCase: false })
+        //                 .click();
+        //             cy.wait('@book');
+        //             cy.get('[data-test-id=modal-rate-book]')
+        //                 .should('be.visible')
+        //                 .find('[data-test-id=rating]')
+        //                 .should('be.visible')
+        //                 .find('[data-test-id=star]')
+        //                 .eq(0)
+        //                 .should('be.visible')
+        //                 .click();
+        //             cy.get('[data-test-id=modal-rate-book]')
+        //                 .find('[data-test-id=comment]')
+        //                 .should('be.visible')
+        //                 .type('profile page test text');
+        //             cy.get('[data-test-id=modal-rate-book]')
+        //                 .find('[data-test-id=button-comment]')
+        //                 .should('be.visible')
+        //                 .should('be.enabled')
+        //                 .click();
+        //             cy.wait('@comment');
+        //             if (isSuccess) {
+        //                 cy.get('[data-test-id=error]')
+        //                     .should('be.visible')
+        //                     .contains('Спасибо, что нашли время изменить оценку!', {
+        //                         matchCase: false,
+        //                     });
+        //             } else {
+        //                 cy.get('[data-test-id=error]')
+        //                     .should('be.visible')
+        //                     .contains('Изменения не были сохранены. Попробуйте позже!', {
+        //                         matchCase: false,
+        //                     });
+        //             }
+        //         };
 
-//     //         describe('update-review', () => {
-//     //             it('success', () => updateReview(true));
-//     //             it('fail', () => updateReview(false));
-//     //         });
-//     //     });
+        //         describe('update-review', () => {
+        //             it('success', () => updateReview(true));
+        //             it('fail', () => updateReview(false));
+        //         });
+        //     });
 
-//     //     const updateReviewOnBookPage = (number, book) => {
-//     //         getFullData();
-//     //         cy.intercept('GET', 'https://strapi.cleverland.by/api/books/**', book).as('book');
-//     //         cy.visit('http://localhost:3000/#/profile');
-//     //         cy.wait(['@books', '@me', '@categories']);
-//     //         cy.get('[data-test-id=history-slide]').eq(number).click();
-//     //         cy.wait('@book');
-//     //         cy.url().should('contain', `${book.id}`);
-//     //         if (book.id === 94) {
-//     //             cy.get('[data-test-id=button-rate-book]')
-//     //                 .should('be.visible')
-//     //                 .should('be.enabled')
-//     //                 .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
-//     //                 .should('have.css', 'border', '1px solid rgb(191, 196, 201)')
-//     //                 .should('have.css', 'border-radius', '30px')
-//     //                 .contains('изменить оценку', { matchCase: false })
-//     //                 .should('have.css', 'color', 'rgb(54, 54, 54)')
-//     //                 .should('have.css', 'font-weight', '600')
-//     //                 .should('have.css', 'font-size', '16px')
-//     //                 .should('have.css', 'letter-spacing', '0.2px')
-//     //                 .should('have.css', 'text-transform', 'uppercase');
-//     //         }
-//     //         if (book.id === 34) {
-//     //             cy.get('[data-test-id=button-rate-book]')
-//     //                 .should('be.visible')
-//     //                 .should('be.enabled')
-//     //                 .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
-//     //                 .should('have.css', 'border-radius', '30px')
-//     //                 .contains('оценить книгу', { matchCase: false })
-//     //                 .should('have.css', 'color', 'rgb(255, 255, 255)')
-//     //                 .should('have.css', 'font-weight', '600')
-//     //                 .should('have.css', 'font-size', '16px')
-//     //                 .should('have.css', 'letter-spacing', '0.2px')
-//     //                 .should('have.css', 'text-transform', 'uppercase');
-//     //         }
-//     //     };
+            const updateReviewOnBookPage = (number, book) => {
+                getFullData();
+                cy.intercept('GET', 'https://strapi.cleverland.by/api/books/**', book).as('book');
+                cy.visit('http://localhost:3000/#/profile');
+                cy.wait(['@books', '@me', '@categories']);
+                cy.get('[data-test-id=history-slide]').eq(number).click();
+                cy.wait('@book');
+                cy.url().should('contain', `${book.id}`);
+                if (book.id === 94) {
+                    cy.get('[data-test-id=button-rate-book]')
+                        .should('be.visible')
+                        .should('be.enabled')
+                        .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
+                        .should('have.css', 'border', '1px solid rgb(191, 196, 201)')
+                        .should('have.css', 'border-radius', '30px')
+                        .contains('изменить оценку', { matchCase: false })
+                        .should('have.css', 'color', 'rgb(54, 54, 54)')
+                        .should('have.css', 'font-weight', '600')
+                        .should('have.css', 'font-size', '16px')
+                        .should('have.css', 'letter-spacing', '0.2px')
+                        .should('have.css', 'text-transform', 'uppercase');
+                }
+                if (book.id === 34) {
+                    cy.get('[data-test-id=button-rate-book]')
+                        .should('be.visible')
+                        .should('be.enabled')
+                        .should('have.css', 'background-color', 'rgba(0, 0, 0, 0)')
+                        .should('have.css', 'border-radius', '30px')
+                        .contains('оценить книгу', { matchCase: false })
+                        .should('have.css', 'color', 'rgb(255, 255, 255)')
+                        .should('have.css', 'font-weight', '600')
+                        .should('have.css', 'font-size', '16px')
+                        .should('have.css', 'letter-spacing', '0.2px')
+                        .should('have.css', 'text-transform', 'uppercase');
+                }
+            };
 
-//     //     describe('update-review-book-page', () => {
-//     //         it('update-button-name', () => updateReviewOnBookPage(2, BOOK_94));
-//     //         it('crate-button-name', () => updateReviewOnBookPage(0, BOOK_34));
-//     //     });
-//     });
-// });
+        describe('update-review-book-page', () => {
+            it('update-button-name', () => updateReviewOnBookPage(2, BOOK_94));
+            it('crate-button-name', () => updateReviewOnBookPage(0, BOOK_34));
+        });
+    });
+});

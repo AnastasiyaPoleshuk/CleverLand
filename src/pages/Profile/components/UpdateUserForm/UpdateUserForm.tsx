@@ -160,7 +160,6 @@ export const UpdateUserForm = (props: IProps) => {
                 message: 'Пароль не менее 8 символов, с заглавной буквой и цифрой',
                 isHighlighting: false
             }));
-
             return;
         }
 
@@ -280,114 +279,135 @@ export const UpdateUserForm = (props: IProps) => {
             <h4 className="form__title">Учётные данные</h4>
             <h5 className="form__subtitle">Здесь вы можете отредактировать информацию о себе</h5>
             <div className="form__section-wrap">
-                <section className="form__section-left">
-                    <input
-                        disabled={disabled}
-                        className={`form__input ${errors.login ? 'form__highlight-error' : ''}`}
-                        placeholder="Придумайте логин для входа"
-                        {...register('login', {
-                            required: 'Поле не может быть пустым',
-                            onChange: (e) => validateLogin(e.target.value),
-                            onBlur: (e) => checkLogin(e.target.value),
-                        })}
-                    />
-                    <p className={`form__input-info ${inputError.isHighlighting ? 'highlight-error' : ''}`} data-test-id='hint'>
-                        {
-                            inputError.message ||
-                            <React.Fragment>
-                                Используйте для логина
-                                <span className={`${inputError.letters ? 'highlight-error' : ''}`}>&nbsp; латинский алфавит &nbsp;</span>
-                                и
-                                <span className={`${inputError.numbers ? 'highlight-error' : ''}`}>&nbsp;цифры</span>
-                            </React.Fragment>
-                        }
-                    </p>
-                    <input
-                        disabled={disabled}
-                        className={`form__input ${errors.firstName ? 'form__highlight-error' : null}`}
-                        placeholder="Имя"
-                        {...register('firstName')}
-                    />
-                    {/* <p className={`form__input-info ${errors.firstName ? 'highlight-error' : 'hide-error'}`} data-test-id='hint'>
-                        {errors?.firstName?.message}
-                    </p> */}
-                    <MaskedInput
-                        className={`form__input ${errors.phone ? 'input-error' : null}`}
-                        name='phone'
-                        disabled={disabled}
-                        placeholderChar="x"
-                        mask={['+', '3', '7', '5', ' ', '(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
-                        type='tel'
-                        showMask={false}
-                        onChange={(e) => setPhoneValue(e.target.value)}
-                        onBlur={(e) => checkPhone(e.target.value)}
-                    />
-                    <p className={`form__input-info ${phoneError ? 'highlight-error' : ''}`} >
-                        {
-                            phoneError || 'В формате +375 (xx) xxx-xx-xx'
-                        }
-                    </p>
-                </section>
-                <section className="form__section-right">
-
-                    <label className='form__label'>
-
+                <section className="form__section">
+                    <label className="form__section-label">
                         <input
-                            type={showPassword ? 'text' : 'password'}
                             disabled={disabled}
-                            placeholder="Пароль"
-                            className={`form__input ${errors.password ? 'form__highlight-error' : ''}`}
-                            {...register('password', {
-                                required: true,
-                                onChange: (e) => validatePassword(e.target.value),
-                                onBlur: (e) => validatePassword(e.target.value)
+                            className={`form__input ${errors.login ? 'form__highlight-error' : ''}`}
+                            placeholder="Придумайте логин для входа"
+                            {...register('login', {
+                                required: 'Поле не может быть пустым',
+                                onChange: (e) => validateLogin(e.target.value),
+                                onBlur: (e) => checkLogin(e.target.value),
                             })}
                         />
-                        <i
-                            className={`password-eye ${showPassword ? 'eye-open' : 'eye-close'}`}
-                            onClick={() => setShowPassword(!showPassword)}
-                            data-test-id={showPassword ? 'eye-opened' : 'eye-closed'}
-                        />
-                        {
-                            passwordError.ok && <i className={`password-ok ${passwordError.ok ? 'ok' : ''}`} data-test-id='checkmark' />
-                        }
+                        <p className={`form__input-info ${inputError.isHighlighting ? 'highlight-error' : ''}`} data-test-id='hint'>
+                            {
+                                inputError.message ||
+                                <React.Fragment>
+                                    Используйте для логина
+                                    <span className={`${inputError.letters ? 'highlight-error' : ''}`}>&nbsp; латинский алфавит &nbsp;</span>
+                                    и
+                                    <span className={`${inputError.numbers ? 'highlight-error' : ''}`}>&nbsp;цифры</span>
+                                </React.Fragment>
+                            }
+                        </p>
+                    </label>
+                    <label className="form__section-label">
+                        <label className='form__label'>
+
+                            <input
+                                type={showPassword ? 'text' : 'password'}
+                                disabled={disabled}
+                                placeholder="Пароль"
+                                className={`form__input ${errors.password ? 'form__highlight-error' : ''}`}
+                                {...register('password', {
+                                    required: true,
+                                    onChange: (e) => validatePassword(e.target.value),
+                                    onBlur: (e) => validatePassword(e.target.value)
+                                })}
+                            />
+                            <i
+                                className={`password-eye ${showPassword ? 'eye-open' : 'eye-close'}`}
+                                onClick={() => setShowPassword(!showPassword)}
+                                data-test-id={showPassword ? 'eye-opened' : 'eye-closed'}
+                            />
+                            {
+                                passwordError.ok && <i className={`password-ok ${passwordError.ok ? 'ok' : ''}`} data-test-id='checkmark' />
+                            }
+                        </label>
+
+                        <p className={`form__input-info ${passwordError.isHighlighting ? 'highlight-error' : ''}`} data-test-id='hint'>
+                            {
+                                passwordError.message ||
+                                <React.Fragment>
+                                    Пароль
+                                    <span className={`${passwordError.length ? 'highlight-error' : ''}`}>&nbsp;не менее 8 символов</span>,
+                                    с
+                                    <span className={`${passwordError.letters ? 'highlight-error' : ''}`}>&nbsp;заглавной буквой&nbsp;</span>
+                                    и
+                                    <span className={`${passwordError.numbers ? 'highlight-error' : ''}`}>&nbsp;цифрой</span>
+                                </React.Fragment>
+                            }
+                        </p>
                     </label>
 
-                    <p className={`form__input-info ${passwordError.isHighlighting ? 'highlight-error' : ''}`} data-test-id='hint'>
-                        {
-                            passwordError.message ||
-                            <React.Fragment>
-                                Пароль
-                                <span className={`${passwordError.length ? 'highlight-error' : ''}`}>&nbsp;не менее 8 символов</span>,
-                                с
-                                <span className={`${passwordError.letters ? 'highlight-error' : ''}`}>&nbsp;заглавной буквой&nbsp;</span>
-                                и
-                                <span className={`${passwordError.numbers ? 'highlight-error' : ''}`}>&nbsp;цифрой</span>
-                            </React.Fragment>
-                        }
-                    </p>
-
-                    < input
-                        disabled={disabled}
-                        placeholder="Фамилия"
-                        className={`form__input ${errors.lastName ? 'form__highlight-error' : null}`}
-                        {...register('lastName')}
-                    />
-                    {/* <p className={`form__input-info ${errors.lastName ? 'highlight-error' : 'hide-error'}`} data-test-id='hint'>
-                    {errors?.lastName?.message}
-                </p> */}
-                    < input
-                        disabled={disabled}
-                        placeholder="E-mail"
-                        className={`form__input ${errors.email ? 'form__highlight-error' : null}`}
-                        {...register('email', { required: 'Поле не может быть пустым', pattern: /([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}/ })}
-                    />
-                    <p className={`form__input-info ${errors.email ? 'highlight-error' : 'hide-error'}`} data-test-id='hint'>
-                        {
-                            errors.email?.message || 'Введите корректный e-mail'
-                        }
-                    </p>
                 </section>
+                <section className="form__section">
+                    <label className="form__section-label">
+                        <input
+                            disabled={disabled}
+                            className={`form__input ${errors.firstName ? 'form__highlight-error' : null}`}
+                            placeholder="Имя"
+                            {...register('firstName')}
+                        />
+                        <p className={`form__input-info ${errors.firstName ? 'highlight-error' : 'hide-error'}`} data-test-id='hint'>
+                            {errors?.firstName?.message}
+                        </p>
+                    </label>
+                    <label className="form__section-label">
+                        <label className='form__label'>
+                            < input
+                                disabled={disabled}
+                                placeholder="Фамилия"
+                                className={`form__input ${errors.lastName ? 'form__highlight-error' : null}`}
+                                {...register('lastName')}
+                            />
+                            <p className={`form__input-info ${errors.lastName ? 'highlight-error' : 'hide-error'}`} data-test-id='hint'>
+                                {errors?.lastName?.message}
+                            </p>
+                        </label>
+                    </label>
+
+                </section>
+                <section className="form__section">
+                    <label className="form__section-label">
+                        <MaskedInput
+                            className={`form__input ${errors.phone ? 'input-error' : null}`}
+                            name='phone'
+                            disabled={disabled}
+                            placeholderChar="x"
+                            mask={['+', '3', '7', '5', ' ', '(', /[1-9]/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/]}
+                            type='tel'
+                            showMask={false}
+                            onChange={(e) => setPhoneValue(e.target.value)}
+                            onBlur={(e) => checkPhone(e.target.value)}
+                        />
+                        <p className={`form__input-info ${phoneError ? 'highlight-error' : ''}`} data-test-id='hint'>
+                            {
+                                phoneError || 'В формате +375 (xx) xxx-xx-xx'
+                            }
+                        </p>
+                    </label>
+                    <label className="form__section-label">
+                        <label className='form__label'>
+                            < input
+                                disabled={disabled}
+                                placeholder="E-mail"
+                                className={`form__input ${errors.email ? 'form__highlight-error' : null}`}
+                                {...register('email', { required: 'Поле не может быть пустым', pattern: /([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}/ })}
+                            />
+                            <p className={`form__input-info ${errors.email ? 'highlight-error' : 'hide-error'}`} data-test-id='hint'>
+                                {
+                                    errors.email?.message || 'Введите корректный e-mail'
+                                }
+                            </p>
+                        </label>
+                    </label>
+
+                </section>
+                {/* <section className="form__section-left"> </section>
+                <section className="form__section-right"> </section> */}
             </div>
             <button
                 type='button'

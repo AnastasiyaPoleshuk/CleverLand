@@ -116,7 +116,7 @@
         padding: 14px 95px;
         margin-top: 32px;
         background: linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%);
-            color: $white-color;
+        color: $white-color;
 
         @media (max-width: 768px) {
             padding: 14px 74px;
@@ -310,6 +310,30 @@
         margin-top: 56px;
         padding: 14px 100px;
         border: 1px solid rgb(191, 196, 201);
+
+
+
+        @media (max-width: 768px) {
+            padding: 14px 244px;
+        }
+
+        @media (max-width: 360px) {
+            @include button-small;
+            padding: 14px 78px;
+            margin-top: 20px;
+        }
+    }
+
+    .feedbacks__button-user {
+        @include button-large;
+        background: $white-color;
+        color: $text-color;
+        border-radius: 30px;
+        margin-top: 56px;
+        padding: 14px 100px;
+        border: 1px solid rgb(191, 196, 201);
+
+
 
         @media (max-width: 768px) {
             padding: 14px 244px;
