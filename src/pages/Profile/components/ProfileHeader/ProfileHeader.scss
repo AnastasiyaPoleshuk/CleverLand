@@ -7,22 +7,49 @@
     align-self: flex-start;
     gap: 30px;
 
+    @media (max-width: 360px) {
+        flex-direction: column;
+        gap: 24px;
+        align-self: center;
+    }
+
 
     .profile-header__avatar-box {
         width: fit-content;
         height: fit-content;
 
-        border-radius: 150px;
+        border-radius: 50%;
         overflow: hidden;
         box-sizing: border-box;
         position: relative;
+
+        @media (max-width: 768px) {
+            width: 160px;
+            height: 120px;
+        }
+
+        @media (max-width: 360px) {
+            width: 150px;
+            height: 130px;
+        }
     }
 
     .profile-header__avatar-img {
         width: 170px;
         height: 118px;
+        border-radius: 50%;
         background: $white-color;
         box-shadow: 0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18), 0px 1px 5px rgba(191, 196, 201, 0.24);
+
+        @media (max-width: 768px) {
+            width: 160px;
+            height: 120px;
+        }
+
+        @media (max-width: 360px) {
+            width: 150px;
+            height: 130px;
+        }
     }
 
     .add-photo {
@@ -44,7 +71,16 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+        }
 
+        @media (max-width: 768px) {
+            top: 78px;
+            width: 115px;
+        }
+
+        @media (max-width: 360px) {
+            top: 88px;
+            width: 150px;
         }
     }
 
@@ -57,8 +93,10 @@
         @include h1;
         text-align: left;
 
-        @media (max-width: 320px) {
-            @include h2;
+        @media (max-width: 360px) {
+            font-weight: 500;
+            font-size: 26px;
+            line-height: 36px;
         }
     }
 

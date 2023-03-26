@@ -5,6 +5,10 @@
 
     .profile-books__title {
         @include h4;
+
+        @media (max-width: 360px) {
+            @include h5;
+        }
     }
 
     .profile-books__subtitle {
@@ -30,6 +34,10 @@
         @include h3;
         color: $white-color;
         border-radius: 10px;
+
+        @media (max-width: 360px) {
+            @include h5;
+        }
     }
 
     .profile-books__warn-field {
@@ -48,11 +56,19 @@
         width: 35%;
         @include h3;
         color: $white-color;
+
+        @media (max-width: 360px) {
+            @include h5;
+        }
     }
 
     .warn__subtitle {
         @include subtitle-large;
         color: $white-color;
         margin-top: 16px;
+
+        @media (max-width: 360px) {
+            @include subtitle-small;
+        }
     }
 }

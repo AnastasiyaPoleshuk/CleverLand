@@ -7,4 +7,12 @@
     align-items: center;
     gap: 92px;
     margin-bottom: 62px;
+
+    @media (max-width: 768px) {
+        gap: 64px;
+    }
+
+    @media (max-width: 360px) {
+        gap: 42px;
+    }
 }
