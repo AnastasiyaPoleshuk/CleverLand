@@ -10,7 +10,6 @@ export const CardsSlider = ({ cards }: { cards: JSX.Element[] }) => (
         pagination={true}
         modules={[Pagination]}
         className="cards-swiper"
-        data-test-id='history'
 
     >
         {

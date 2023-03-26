@@ -50,7 +50,7 @@ export const Profile = () => {
 
         setBooksInfoComponents(profileBooksData);
 
-    }, []);
+    }, [books]);
 
     useEffect(() =>{
         setAlertText(alert.text);

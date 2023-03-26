@@ -15,7 +15,7 @@ export const ProfileBooks = (props: { data: IProps }) => {
     const { title, subtitle, emptyFieldText, isEmpty, warningTitle, warningSubtitle, isWarning, component } = props.data;
 
     return (
-        <section className="profile-books__section">
+        <section className="profile-books__section"   data-test-id='history' >
             <h3 className="profile-books__title">{title}</h3>
             <p className="profile-books__subtitle">{subtitle}</p>
 
