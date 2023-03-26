@@ -30,7 +30,7 @@ export const BookPage = () => {
 
 
     useEffect(() => {
-        dispatch(GetBookThunk(id) as unknown as AnyAction)
+        dispatch(GetBookThunk(id) as unknown as AnyAction);
     }, [bookId])
 
     useEffect(() => {
@@ -52,7 +52,7 @@ export const BookPage = () => {
                         {book ? category === 'all' ? 'Все книги' : 'Программирование' : 'Программирование'}
                     </NavLink>
                     <span data-test-id='book-name'>
-                        {book ? ` / ${book.title}` : ' / '}
+                        {book?.title ? ` / ${book?.title}` : ' / '}
                     </span>
                 </div>
             </section>

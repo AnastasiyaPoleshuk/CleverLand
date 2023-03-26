@@ -27,33 +27,32 @@ export const LayoutMainPage = () => {
     const { alert } = useSelector((state: IStore) => state.alert);
     const { isAuth } = useSelector((state: IStore) => state.isAuth)
     const { books } = useSelector((state: IStore) => state.books);
-    const { user } = useSelector((state: IStore) => state.user.user);
+    const { fullUser: user } = useSelector((state: IStore) => state.fullUser);
     const { isError: isErrorState } = useSelector((state: IStore) => state.isError);
     const { categories } = useSelector((state: IStore) => state.categories);
-    const { jwt } = useSelector((state: IStore) => state.user.user);
     const [isLoading, setIsLoading] = useState(isLoadingState);
     const [isError, setIsError] = useState(isErrorState);
     const [isBooking, setIsBooking] = useState(false);
 
     useEffect(() => {
-        if (isAuth) {
-            categories.length > 0 ? dispatch(GetBooksThunk() as unknown as AnyAction).then(() => {
+        // if (isAuth) {
+        categories.length > 0 ? dispatch(GetBooksThunk() as unknown as AnyAction).then(() => {
+            setIsLoading(false);
+        })
+            : (dispatch(GetCategoriesThunk() as unknown as AnyAction),
+                dispatch(GetBooksThunk() as unknown as AnyAction)
+            ).then(() => {
                 setIsLoading(false);
             })
-                : (dispatch(GetCategoriesThunk() as unknown as AnyAction),
-                    dispatch(GetBooksThunk() as unknown as AnyAction)
-                ).then(() => {
-                    setIsLoading(false);
-                })
-            dispatch(GetFullUserThunk() as unknown as AnyAction);
-        } else {
-            navigate('/auth');
-        }
+        dispatch(GetFullUserThunk() as unknown as AnyAction);
+        // } else {
+        //     navigate('/auth');
+        // }
 
     }, [])
 
     useEffect(() => {
-        const bookBooked = books.find(item => item.id === bookId);
+        const bookBooked = books.find(book => book.id === bookId);
 
         if (bookBooked?.booking) {
             setIsBooking(bookBooked?.booking.customerId === user.id)
@@ -94,6 +93,9 @@ export const LayoutMainPage = () => {
                         isBooking ? <UpdateBookingForm bookId={bookId} /> : <BookingForm bookId={bookId} />
                     }
                 </ModalWindow>
+            }
+            {
+                isError && <AlertModal />
             }
         </React.Fragment>
     )

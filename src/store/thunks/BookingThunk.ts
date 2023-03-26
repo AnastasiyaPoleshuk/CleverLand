@@ -2,7 +2,6 @@ import { Dispatch } from 'redux';
 import StatusCodes from 'http-status-codes';
 
 import { booking } from '../../api/booking';
-import { updateBooking } from '../../api/updateBooking';
 import { IBookingRequestData, IBookingResponse, IError } from '../../types/apiTypes';
 import { AlertAction } from '../actions/AlertActions';
 import { BookingAction, isBookingSuccessAction } from '../actions/BookingActions';

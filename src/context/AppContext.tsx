@@ -88,9 +88,6 @@ export const AppState = ({ children }: { children: React.ReactNode }) => {
 
     const changeCardsView = (value: boolean) => {
         setIsList(value);
-        console.log('context: ', isList, value);
-
-
     };
 
     const changeSearchString = (value: string) => {

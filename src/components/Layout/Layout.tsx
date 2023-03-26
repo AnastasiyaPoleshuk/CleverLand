@@ -22,15 +22,15 @@ export const Layout = () => {
     const { isCommentModalOpen } = useContext(AppContext);
 
     useEffect(() => {
-        isAuth ? null : navigate('/auth');
-        dispatch(GetCategoriesThunk() as unknown as AnyAction)
-        dispatch(GetBooksThunk() as unknown as AnyAction)
-        dispatch(GetFullUserThunk() as unknown as AnyAction)
+        dispatch(GetCategoriesThunk() as unknown as AnyAction);
+        dispatch(GetBooksThunk() as unknown as AnyAction);
+        dispatch(GetFullUserThunk() as unknown as AnyAction);
     }, [])
 
-    useEffect(() => {
-        isAuth ? null : navigate('/auth');
-    }, [isAuth])
+    // useEffect(() => {
+    //     console.log("Layout: ", isAuth);
+    //     isAuth ? null : navigate('/auth');
+    // }, [isAuth])
 
     return (
         <div data-test-id='main-page'>

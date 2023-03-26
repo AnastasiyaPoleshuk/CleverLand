@@ -2,6 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { AlertAction } from '../../store/actions/AlertActions';
+import { ErrorAction, isErrorAction } from '../../store/actions/ErrorAction';
+import { IError } from '../../types/apiTypes';
 import { IStore } from '../../types/storeTypes';
 
 import './AlertModal.scss';
@@ -17,7 +19,9 @@ export const AlertModal = () => {
     }, [])
 
     function close() {
-        dispatch(AlertAction({ isError: false, text: '' }))
+        dispatch(AlertAction({ isError: false, text: '' }));
+        dispatch(isErrorAction(false));
+
     }
 
     return (

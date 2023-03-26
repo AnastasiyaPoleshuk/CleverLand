@@ -24,7 +24,7 @@ export const UpdateBookingForm = (props: IProps) => {
     const { closeModal, bookId: ContextBookId } = useContext(AppContext);
     const { books } = useSelector((state: IStore) => state.books);
     const { booking } = useSelector((state: IStore) => state.booking);
-    const { user } = useSelector((state: IStore) => state.user.user);
+    const { fullUser: user } = useSelector((state: IStore) => state.fullUser);
     const [selected, setSelected] = useState(moment().startOf('day'));
     const [disabled, setDisabled] = useState(true);
 

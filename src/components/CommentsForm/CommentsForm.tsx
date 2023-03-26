@@ -25,7 +25,7 @@ export const CommentsForm = () => {
 
 
     useEffect(() => {
-        const currentBooksComment = user.comments.find(userComment => userComment.bookId === bookId);
+        const currentBooksComment = user.comments?.find(userComment => userComment.bookId === bookId);
 
         if (currentBooksComment) {
             setComment(currentBooksComment.text || '');

@@ -14,7 +14,7 @@ import './BookComponent.scss';
 export const BookComponent = ({ book }: { book: IGetBook }) => {
     const [disabled, setDisabled] = useState(false);
     const { openModal, setIdForBooking } = useContext(AppContext);
-    const { user } = useSelector((state: IStore) => state.user.user);
+    const { fullUser: user } = useSelector((state: IStore) => state.fullUser);
 
     useEffect(() => {
         setDisabled(book.booking ? (book.booking.customerId !== user.id ? true : (book.delivery ? true : false)) : (book.delivery ? true : false));
@@ -42,7 +42,7 @@ export const BookComponent = ({ book }: { book: IGetBook }) => {
                         data-test-id='booking-button'
                     >
                         {
-                            book.booking ? 'Забронирована' : book.delivery ? `занята до ${moment(book.delivery.dateHandedTo).format('DD.MM')}` : 'Забронировать'
+                            book.booking ? 'Забронирована' : (book.delivery ? `занята до ${moment(book.delivery.dateHandedTo).format('DD.MM')}` : 'Забронировать')
                         }
                     </button>
 
