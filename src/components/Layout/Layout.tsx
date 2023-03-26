@@ -41,7 +41,7 @@ export const Layout = () => {
         if (!isAuth) {
             navigate('/auth')
         } else {
-            navigate('/')
+            navigate(-1);
         }
 
     }, [isAuth])

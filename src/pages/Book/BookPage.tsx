@@ -27,7 +27,11 @@ export const BookPage = () => {
     const { bookId } = useParams();
     const { category } = useParams();
     const id = bookId ? +bookId : 2;
+    const [alertText, setAlertText] = useState<string>('');
 
+    useEffect(() =>{
+        setAlertText(alert.text);
+    },[alert])
 
     useEffect(() => {
         dispatch(GetBookThunk(id) as unknown as AnyAction);
@@ -60,7 +64,7 @@ export const BookPage = () => {
                 isLoading && <Loader />
             }
             {
-                (alert.text && !isLoading) && <AlertModal />
+                (alertText && !isLoading) && <AlertModal />
             }
             {
                 book ? <BookComponent book={book} /> : null
