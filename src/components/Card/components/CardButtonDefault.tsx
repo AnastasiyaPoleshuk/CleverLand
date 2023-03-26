@@ -6,7 +6,6 @@ import { IBooking, IDelivery } from '../../../types/apiTypes';
 import { CONSTANTS } from '../../../utils/constants';
 
 interface IProps {
-    // isList: boolean,
     delivery: IDelivery,
     booking: IBooking,
     userId: number,
@@ -17,7 +16,6 @@ interface IProps {
 export const CardButtonDefault = (props: IProps) => {
     const { delivery, booking, userId, cardId } = props;
     const { isList, openModal, setIdForBooking } = useContext(AppContext);
-    console.log(isList);
 
     const openBookingForm = (e: MouseEvent) => {
         e.stopPropagation();

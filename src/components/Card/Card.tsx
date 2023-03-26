@@ -38,7 +38,7 @@ export const Card = (props: IProps) => {
 
 
     useEffect(() => {
-        const hasComment = !!user.comments.find(comment => comment.bookId === id);
+        const hasComment = !!user?.comments?.find(comment => comment.bookId === id);
 
         switch (buttonType) {
             case CONSTANTS.DEFAULT_BUTTON: // isList={isList}
@@ -56,7 +56,7 @@ export const Card = (props: IProps) => {
             default:
                 break;
         }
-    }, [])
+    }, [user, booking])
 
 
     // useEffect(() => {
