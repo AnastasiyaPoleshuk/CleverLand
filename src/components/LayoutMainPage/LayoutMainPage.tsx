@@ -35,7 +35,9 @@ export const LayoutMainPage = () => {
     const [isBooking, setIsBooking] = useState(false);
 
     useEffect(() => {
-        // if (isAuth) {
+        const cypressTestAuth = localStorage.getItem('cypressTestAuth');
+
+        if (JSON.parse(cypressTestAuth as string) ) {
         categories.length > 0 ? dispatch(GetBooksThunk() as unknown as AnyAction).then(() => {
             setIsLoading(false);
         })
@@ -45,9 +47,9 @@ export const LayoutMainPage = () => {
                 setIsLoading(false);
             })
         dispatch(GetFullUserThunk() as unknown as AnyAction);
-        // } else {
-        //     navigate('/auth');
-        // }
+        } else {
+            navigate('/auth');
+        }
 
     }, [])
 

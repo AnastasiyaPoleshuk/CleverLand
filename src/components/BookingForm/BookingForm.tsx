@@ -25,7 +25,7 @@ export const BookingForm = (props: IProps) => {
     const { closeModal, bookId: ContextBookId } = useContext(AppContext);
     const [disabled, setDisabled] = useState(true);
     const [selected, setSelected] = useState(moment().startOf('day'));
-    const { user } = useSelector((state: IStore) => state.user.user);
+    const { fullUser: user } = useSelector((state: IStore) => state.fullUser);
 
     const onSubmit = () => {
         const requestData = {

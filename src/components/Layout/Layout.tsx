@@ -27,10 +27,11 @@ export const Layout = () => {
         dispatch(GetFullUserThunk() as unknown as AnyAction);
     }, [])
 
-    // useEffect(() => {
-    //     console.log("Layout: ", isAuth);
-    //     isAuth ? null : navigate('/auth');
-    // }, [isAuth])
+    useEffect(() => {
+        const cypressTestAuth = localStorage.getItem('cypressTestAuth');
+
+        (!JSON.parse(cypressTestAuth as string)) && navigate('/auth');
+    }, [isAuth])
 
     return (
         <div data-test-id='main-page'>

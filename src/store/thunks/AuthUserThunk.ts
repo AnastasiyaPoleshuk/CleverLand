@@ -14,9 +14,11 @@ export const AuthUserThunk = (requestData: IAuthRequest) => async function (disp
     if (response.status === StatusCodes.OK) {
         dispatch(AuthAction(response.data as IUserResponse));
         dispatch(IsAuthAction(true));
+        localStorage.setItem('cypressTestAuth', 'true');
     } else {
         dispatch(ErrorAction(response.data as IError));
         dispatch(IsAuthAction(false));
+        localStorage.setItem('cypressTestAuth', 'false');
     }
     dispatch(LoadingAction(false));
 };

@@ -37,6 +37,7 @@ export const HeaderNav = ({ styleType }: { styleType: string }) => {
             }
         ))
         dispatch(IsAuthAction(false));
+        delete localStorage.cypressTestAuth;
         navigate('/auth');
     }
 
