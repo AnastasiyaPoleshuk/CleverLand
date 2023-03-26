@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { AnyAction } from 'redux';
@@ -30,12 +30,36 @@ export const Profile = () => {
     const { isLoading } = useSelector((state: IStore) => state.isLoading);
     const { alert } = useSelector((state: IStore) => state.alert);
     const { books } = useSelector((state: IStore) => state.books);
+    const [booksInfoComponents, setBooksInfoComponents] = useState<IProfileBooksData[]>([])
+    const [alertText, setAlertText] = useState<string>('');
     // const { changeCardsView } = useContext(AppContext);
 
-    const createProfileBooksData = () => {
+    interface IProfileBooksData {
+        title: string;
+        subtitle: string;
+        warningTitle: string;
+        warningSubtitle: string;
+        isWarning: boolean;
+        emptyFieldText: string[];
+        isEmpty: boolean;
+        component?: JSX.Element;
+    }
+
+    useEffect(() => {
+        const profileBooksData = createProfileBooksData();
+
+        setBooksInfoComponents(profileBooksData);
+
+    }, []);
+
+    useEffect(() =>{
+        setAlertText(alert.text);
+    },[alert])
+
+    function createProfileBooksData () {
         const profileBooksArr = [];
 
-        if (user.booking) {
+        if (user.booking && books.length > 0) {
             const CardComponent = books.find(book => book.id === user.booking.book?.id);
 
             const profileBooksInfo = {
@@ -52,7 +76,7 @@ export const Profile = () => {
             profileBooksArr.push(profileBooksInfo);
         }
 
-        if (user.delivery) {
+        if (user.delivery && books.length > 0) {
             const CardComponent = books.find(book => book.id === user.delivery.book?.id);
             const profileBooksInfo = {
                 title: 'Книга которую взяли',
@@ -69,7 +93,7 @@ export const Profile = () => {
 
         }
 
-        if (user.history) {
+        if (user.history && books.length > 0) {
             const BooksInHistory = user.history.books ? findBooksHistory(books, user.history.books) : [];
 
             const profileBooksInfo = {
@@ -90,21 +114,14 @@ export const Profile = () => {
     }
 
 
-    useEffect(() => {
-        !isAuth ? navigate('/auth') : null;
-        // dispatch(GetCategoriesThunk() as unknown as AnyAction)
-        // dispatch(GetBooksThunk() as unknown as AnyAction)
-        // dispatch(GetFullUserThunk() as unknown as AnyAction)
-    }, []);
-
     return (
         <React.Fragment>
-            <div className="profile__container" >
+            <div className="profile__container"  >
                 <ProfileHeader
                     firstName={user.firstName}
                     lastName={user.lastName}
                     img={user.avatar}
-                    userId={user.id}
+                    userId={user?.id}
                 />
                 <UpdateUserForm
                     firstName={user.firstName}
@@ -113,11 +130,11 @@ export const Profile = () => {
                     userId={user.id}
                 />
                 {
-                    createProfileBooksData().map(profileBook => <ProfileBooks key={profileBook.title} data={profileBook} />)
+                    booksInfoComponents.length  > 0 && booksInfoComponents.map(profileBook => <ProfileBooks key={profileBook.title} data={profileBook} />)
                 }
             </div>
             {
-                (alert.text && !isLoading) && <AlertModal />
+                (alertText && !isLoading) && <AlertModal />
             }
             {
                 isLoading && <Loader />

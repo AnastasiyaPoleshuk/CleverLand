@@ -64,7 +64,14 @@ export const UpdateUserForm = (props: IProps) => {
             phone: phone || userPhone,
         }
 
-        dispatch(UpdateUserThunk({ requestData, userId }) as unknown as AnyAction);
+        dispatch(UpdateUserThunk({ 
+            requestData, 
+            userId,
+            message: {
+                success: 'Изменения успешно сохранены!',
+                fail: 'Изменения не были сохранены. Попробуйте позже!'
+            } 
+        }) as unknown as AnyAction);
         setDisabled(true);
         reset();
     };

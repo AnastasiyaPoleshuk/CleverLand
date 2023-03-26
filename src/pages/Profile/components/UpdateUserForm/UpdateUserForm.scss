@@ -25,6 +25,8 @@
         border-radius: 30px;
         padding: 14px 0;
         @include button-large;
+        border: 1.2px solid rgb(191, 196, 201);
+
         text-align: center;
     }
 

@@ -27,7 +27,15 @@ export const ProfileHeader = (props: IProps) => {
 
     useEffect(() => {
         if (avatar) {
-            dispatch(UpdateUserThunk({ requestData: { avatar }, userId }) as unknown as AnyAction);
+            dispatch(UpdateUserThunk(
+                { 
+                    requestData: { avatar }, 
+                    userId, 
+                    message:{
+                        success: 'Фото успешно сохранено!',
+                        fail: 'Что-то пошло не так, фото не сохранилось. Попробуйте позже!'
+                    } 
+                }) as unknown as AnyAction);
         }
     }, [avatar])
 

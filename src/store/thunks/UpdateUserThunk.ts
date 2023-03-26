@@ -8,16 +8,25 @@ import { GetFullUserAction } from '../actions/AuthActions';
 import { ErrorAction } from '../actions/ErrorAction';
 import { LoadingAction } from '../actions/LoadingAction';
 
-export const UpdateUserThunk = ({ requestData, userId }: { requestData: IUpdateUserRequest, userId: number }) => async function (dispatch: Dispatch) {
+interface IData { 
+    requestData: IUpdateUserRequest, 
+    userId: number, 
+    message: {
+        success: string,
+        fail: string
+    } 
+}
+
+export const UpdateUserThunk = ({ requestData, userId, message }: IData) => async function (dispatch: Dispatch) {
     dispatch(LoadingAction(true));
     const response: { data: IFullUserResponse | IError, status: number } = await updateUser({ requestData, userId })
 
     if (response.status === StatusCodes.OK) {
         dispatch(GetFullUserAction(response.data as IFullUserResponse));
-        dispatch(AlertAction({ isError: false, text: 'Изменения успешно сохранены!' }));
+        dispatch(AlertAction({ isError: false, text: message.success }));
     } else {
         dispatch(ErrorAction(response.data as IError));
-        dispatch(AlertAction({ isError: true, text: 'Изменения не были сохранены. Попробуйте позже!' }));
+        dispatch(AlertAction({ isError: true, text: message.fail }));
     }
     dispatch(LoadingAction(false));
 };

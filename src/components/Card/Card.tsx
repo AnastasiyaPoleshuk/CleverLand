@@ -45,7 +45,7 @@ export const Card = (props: IProps) => {
                 setButton(<CardButtonDefault booking={booking} delivery={delivery} userId={user.id} cardId={id} />)
                 break;
             case CONSTANTS.BOOKING_BUTTON:
-                setButton(<CardsBookingButton bookingId={booking.id || 0} bookId={id} />)
+                setButton(<CardsBookingButton bookingId={booking?.id || 0} bookId={id} />)
                 break;
             case CONSTANTS.DELIVERY_BUTTON:
                 setButton(<CardDeliveryButton text={user.delivery.dateHandedTo || ''} />)
