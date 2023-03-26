@@ -3,6 +3,10 @@
 .update-user__form {
     .form__title {
         @include h4;
+
+        @media (max-width: 360px) {
+            @include h5;
+        }
     }
 
     .form__subtitle {
@@ -17,6 +21,11 @@
         align-items: center;
         gap: 30px;
         margin: 32px 0 52px 0;
+
+        @media (max-width: 360px) {
+            flex-direction: column;
+            margin: 0 0 32px 0;
+        }
     }
 
     .form__update-btn,
@@ -25,9 +34,12 @@
         border-radius: 30px;
         padding: 14px 0;
         @include button-large;
-        border: 1.2px solid rgb(191, 196, 201);
 
         text-align: center;
+
+        @media (max-width: 360px) {
+            width: 288px
+        }
     }
 
     .form__label {
@@ -96,10 +108,15 @@
     }
 
     .form__update-btn {
-        background: $white-color;
-        border: 1px solid #BFC4C9;
+        background: rgba(0, 0, 0, 0);
+        border: 1.2px solid #BFC4C9;
         color: $text-color;
         margin-right: 30px;
+
+        @media (max-width: 360px) {
+            margin-right: 0px;
+            margin-bottom: 16px;
+        }
     }
 
 }

@@ -64,13 +64,13 @@ export const UpdateUserForm = (props: IProps) => {
             phone: phone || userPhone,
         }
 
-        dispatch(UpdateUserThunk({ 
-            requestData, 
+        dispatch(UpdateUserThunk({
+            requestData,
             userId,
             message: {
                 success: 'Изменения успешно сохранены!',
                 fail: 'Изменения не были сохранены. Попробуйте позже!'
-            } 
+            }
         }) as unknown as AnyAction);
         setDisabled(true);
         reset();
@@ -142,13 +142,11 @@ export const UpdateUserForm = (props: IProps) => {
                 message: 'Используйте для логина латинский алфавит и цифры',
                 isHighlighting: false
             });
-            setDisabled(false)
         } else {
             setInputError(inputError => ({
                 ...inputError,
                 ok: false,
             }))
-            setDisabled(true)
         };
 
 
@@ -226,13 +224,12 @@ export const UpdateUserForm = (props: IProps) => {
                 message: 'Пароль не менее 8 символов, с заглавной буквой и цифрой',
                 isHighlighting: false
             })
-            setDisabled(false)
         } else {
             setPasswordError(passwordError => ({
                 ...passwordError,
                 ok: false,
+                isHighlighting: true
             }))
-            setDisabled(true)
         };
 
     };
@@ -312,8 +309,8 @@ export const UpdateUserForm = (props: IProps) => {
                         {...register('firstName')}
                     />
                     {/* <p className={`form__input-info ${errors.firstName ? 'highlight-error' : 'hide-error'}`} data-test-id='hint'>
-                    {errors?.firstName?.message}
-                </p> */}
+                        {errors?.firstName?.message}
+                    </p> */}
                     <MaskedInput
                         className={`form__input ${errors.phone ? 'input-error' : null}`}
                         name='phone'
@@ -325,7 +322,7 @@ export const UpdateUserForm = (props: IProps) => {
                         onChange={(e) => setPhoneValue(e.target.value)}
                         onBlur={(e) => checkPhone(e.target.value)}
                     />
-                    <p className={`form__input-info ${phoneError ? 'highlight-error' : ''}`} data-test-id='hint'>
+                    <p className={`form__input-info ${phoneError ? 'highlight-error' : ''}`} >
                         {
                             phoneError || 'В формате +375 (xx) xxx-xx-xx'
                         }
@@ -369,6 +366,7 @@ export const UpdateUserForm = (props: IProps) => {
                             </React.Fragment>
                         }
                     </p>
+
                     < input
                         disabled={disabled}
                         placeholder="Фамилия"
@@ -394,7 +392,7 @@ export const UpdateUserForm = (props: IProps) => {
             <button
                 type='button'
                 className="form__update-btn"
-                onClick={() => setDisabled(false)}
+                onClick={() => setDisabled(!disabled)}
                 data-test-id='edit-button'
             >
                 Редактировать
