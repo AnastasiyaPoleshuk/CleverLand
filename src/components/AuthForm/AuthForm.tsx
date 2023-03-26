@@ -17,7 +17,6 @@ import './AuthForm.scss';
 export const AuthForm = () => {
     const { isAuth: isAuthState } = useSelector((state: IStore) => state.isAuth);
     const { error } = useSelector((state: IStore) => state.error.error);
-    const [isAuth, setIsAuth] = useState(isAuthState);
     const [showPassword, setShowPassword] = useState(false);
     const [passwordValue, setPasswordValue] = useState('');
     const [inputError, setInputError] = useState('');
@@ -45,8 +44,7 @@ export const AuthForm = () => {
     }, [error])
 
     useEffect(() => {
-        setIsAuth(!isAuth);
-        isAuth ? navigate('/') : null;
+        isAuthState && navigate('/');
     }, [isAuthState])
 
     const onSubmit: SubmitHandler<IAuthRequest> = (data) => {

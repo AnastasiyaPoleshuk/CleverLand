@@ -1,13 +1,9 @@
 import { useContext } from 'react';
 import { useDispatch } from 'react-redux';
 import { NavLink, useNavigate } from 'react-router-dom';
-import { AnyAction } from 'redux';
 
 import { AppContext } from '../../context/AppContext';
 import { AuthAction, IsAuthAction } from '../../store/actions/AuthActions';
-import { GetBooksThunk } from '../../store/thunks/GetBooksThunk';
-import { GetCategoriesThunk } from '../../store/thunks/GetCategoriesThunk';
-import { GetFullUserThunk } from '../../store/thunks/GetFullUserThunk';
 import { CONSTANTS } from '../../utils/constants';
 
 import './HeaderNav.scss';
@@ -37,14 +33,11 @@ export const HeaderNav = ({ styleType }: { styleType: string }) => {
             }
         ))
         dispatch(IsAuthAction(false));
-        delete localStorage.cypressTestAuth;
+        delete localStorage.cypressTestAuthToken;
         navigate('/auth');
     }
 
     const goToProfile = () => {
-        // dispatch(GetCategoriesThunk() as unknown as AnyAction)
-        // dispatch(GetBooksThunk() as unknown as AnyAction)
-        // dispatch(GetFullUserThunk() as unknown as AnyAction)
         closeModal(CONSTANTS.NAV_MODAL);
 
     }

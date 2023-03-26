@@ -14,11 +14,12 @@ export const AuthUserThunk = (requestData: IAuthRequest) => async function (disp
     if (response.status === StatusCodes.OK) {
         dispatch(AuthAction(response.data as IUserResponse));
         dispatch(IsAuthAction(true));
-        localStorage.setItem('cypressTestAuth', 'true');
+        const token = response.data as IUserResponse;
+
+        localStorage.setItem('cypressTestAuthToken', token.jwt as string);
     } else {
         dispatch(ErrorAction(response.data as IError));
         dispatch(IsAuthAction(false));
-        localStorage.setItem('cypressTestAuth', 'false');
     }
     dispatch(LoadingAction(false));
 };

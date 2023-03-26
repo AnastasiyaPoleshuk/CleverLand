@@ -35,23 +35,19 @@ export const LayoutMainPage = () => {
     const [isBooking, setIsBooking] = useState(false);
 
     useEffect(() => {
-        const cypressTestAuth = localStorage.getItem('cypressTestAuth');
-
-        if (JSON.parse(cypressTestAuth as string) ) {
-        categories.length > 0 ? dispatch(GetBooksThunk() as unknown as AnyAction).then(() => {
-            setIsLoading(false);
-        })
-            : (dispatch(GetCategoriesThunk() as unknown as AnyAction),
-                dispatch(GetBooksThunk() as unknown as AnyAction)
-            ).then(() => {
+        if (isAuth) {
+            categories.length > 0 ? dispatch(GetBooksThunk() as unknown as AnyAction).then(() => {
                 setIsLoading(false);
             })
-        dispatch(GetFullUserThunk() as unknown as AnyAction);
-        } else {
-            navigate('/auth');
+                : (dispatch(GetCategoriesThunk() as unknown as AnyAction),
+                    dispatch(GetBooksThunk() as unknown as AnyAction)
+                ).then(() => {
+                    setIsLoading(false);
+                })
+            dispatch(GetFullUserThunk() as unknown as AnyAction);
         }
 
-    }, [])
+    }, [isAuth])
 
     useEffect(() => {
         const bookBooked = books.find(book => book.id === bookId);

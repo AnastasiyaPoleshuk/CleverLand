@@ -1,9 +1,11 @@
-import React, { useContext, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, useNavigate } from 'react-router-dom'
 import { AnyAction } from 'redux';
 
+import { apiSetHeader } from '../../api/api';
 import { AppContext } from '../../context/AppContext';
+import { IsAuthAction } from '../../store/actions/AuthActions';
 import { GetBooksThunk } from '../../store/thunks/GetBooksThunk';
 import { GetCategoriesThunk } from '../../store/thunks/GetCategoriesThunk';
 import { GetFullUserThunk } from '../../store/thunks/GetFullUserThunk';
@@ -22,20 +24,30 @@ export const Layout = () => {
     const { isCommentModalOpen } = useContext(AppContext);
 
     useEffect(() => {
-        dispatch(GetCategoriesThunk() as unknown as AnyAction);
-        dispatch(GetBooksThunk() as unknown as AnyAction);
-        dispatch(GetFullUserThunk() as unknown as AnyAction);
+        const cypressTestAuthToken = localStorage.getItem('cypressTestAuthToken');
+
+        if (cypressTestAuthToken) {
+            dispatch(IsAuthAction(true));
+            apiSetHeader('Authorization', `Bearer ${cypressTestAuthToken}`);
+
+            dispatch(GetCategoriesThunk() as unknown as AnyAction);
+            dispatch(GetBooksThunk() as unknown as AnyAction);
+            dispatch(GetFullUserThunk() as unknown as AnyAction);
+        }
+
     }, [])
 
     useEffect(() => {
-        const cypressTestAuth = localStorage.getItem('cypressTestAuth');
+        if (!isAuth) {
+            navigate('/auth')
+        } else {
+            navigate('/')
+        }
 
-        (!JSON.parse(cypressTestAuth as string)) && navigate('/auth');
     }, [isAuth])
 
     return (
         <div data-test-id='main-page'>
-            {/* <React.Fragment> */}
             <Header />
             <div className="app">
                 <Outlet />
@@ -48,7 +60,6 @@ export const Layout = () => {
                     <CommentsForm />
                 </ModalWindow>
             }
-            {/* </React.Fragment> */}
         </div>
     )
 }
