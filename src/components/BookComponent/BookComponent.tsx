@@ -35,7 +35,7 @@ export const BookComponent = ({ book }: { book: IGetBook }) => {
                 <ImgSlider img={book.images} />
                 <div className="main-info__block">
                     <h3 className="main-info__title" data-test-id='book-title'>
-                        {book.title ? ` / ${book.title}` : ' / '}
+                        {book.title && book.title}
                     </h3>
                     <h5 className="main-info__author">{book.authors?.join(' ')}</h5>
                     <button
