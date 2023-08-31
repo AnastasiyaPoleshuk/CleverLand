@@ -41,7 +41,7 @@ export const Card = (props: IProps) => {
         const hasComment = !!user?.comments?.find(comment => comment.bookId === id);
 
         switch (buttonType) {
-            case CONSTANTS.DEFAULT_BUTTON: // isList={isList}
+            case CONSTANTS.DEFAULT_BUTTON:
                 setButton(<CardButtonDefault booking={booking} delivery={delivery} userId={user.id} cardId={id} />)
                 break;
             case CONSTANTS.BOOKING_BUTTON:
@@ -90,7 +90,7 @@ export const Card = (props: IProps) => {
         <div className={`${isList ? 'list-item' : 'card'}`} data-test-id='card' onClick={changePage}>
             {
                 image ?
-                    <img src={`${CONSTANTS.URL}${image.url}`} alt='фото книги' className={`${isList ? 'list-item__img' : 'card__img'}`} />
+                    <img src={image.url} alt='фото книги' className={`${isList ? 'list-item__img' : 'card__img'}`} />
                     : <img src={altPath} alt='фото книги' className={`${isList ? 'list-item__img-alt' : 'card__img-alt'}`} />
             }
             <div className={`${isList ? 'list-item__info-box' : null}`}>

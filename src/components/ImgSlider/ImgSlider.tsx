@@ -40,7 +40,7 @@ export function ImgSlider(props: Iprops) {
                             <img src={altPath} alt="фото книги" className={img?.length > 0 ? 'main-info__img' : 'main-info__img-alt'} />
                         </SwiperSlide>
                         : img?.map((item) => <SwiperSlide key={item.url} >
-                            <img src={`${CONSTANTS.URL}${item.url}`} alt="фото книги" className="main-info__img" />
+                            <img src={item.url} alt="фото книги" className="main-info__img" />
                         </SwiperSlide>
                         )
                 }

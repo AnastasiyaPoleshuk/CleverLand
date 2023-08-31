@@ -1,5 +1,5 @@
 export const CONSTANTS = {
-  URL: 'https://strapi.cleverland.by',
+  URL: 'https://library-cleverland-2jfze.ondigitalocean.app/',
   // URL: 'http://localhost:5000',
   BURGER_MODAL: 'BURGER_MODAL',
   NAV_MODAL: 'NAV_MODAL',
