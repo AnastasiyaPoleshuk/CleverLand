@@ -17,5 +17,5 @@ Cleverland is a library web application in which readers can register, see the f
 
 ### Test user:
 
-* **Email:** Teeeest1;
-* **password:** 1Drrrrrr.
+* **Email:** Anastasiya;
+* **password:** 111Lit111.
