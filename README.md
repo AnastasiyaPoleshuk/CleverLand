@@ -13,6 +13,8 @@ Cleverland is a library web application in which readers can register, see the f
 
 ## Demo
 
+###Warning: from 01.11 the API was disabled; new one in development
+
 [CleverLand](https://cleverland.netlify.app/)
 
 ### Test user:
